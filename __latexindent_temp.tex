@@ -14,7 +14,7 @@
 \usepackage{pifont}
 \usepackage{eurosym}
 \usepackage{hyperref}
-% Use multiple columns when itemizing
+asdfsdfgsdfgsdgf
 \usepackage{multicol}
 \usepackage[english]{babel}
 \usepackage{graphicx}
@@ -1111,42 +1111,46 @@ $\square$
 
 \subsection{\Col Propiedades del logaritmo base $a$}
 
-\textbf{Teorema: (Propiedades del logaritmo base $a$)} Sean $x,y>0$ y $r\in\mathbb{R}$, entonces 
+$\linebreak$
 
-\setlength{\columnsep}{-1.1in}
-\begin{multicols}{2}
-    \begin{itemize}
-        \item[i)] $\log_a(xy)=\log_a(x)+\log_a(y)$,
-        \item[ii)] $\log_a(x^{-1})=-\log_a(x)$,
-        \item[iii)] $\log_a(\frac{x}{y})=\log_a(x)-\log_a(y)$,
-        \item[iv)] $\log_a(x^r)=r\log_a(x)$.
-    \end{itemize}
-\end{multicols}
+\textbf{Teorema:} Sean $x,y>0$ y $r\in\mathbb{R}$, entonces 
+
+\begin{enumerate}
+\item[i)] $\log_a(xy)=\log_a(x)+\log_a(y)$.
+\item[ii)] $\log_a(x^{-1})=-\log_a(x)$.
+\item[iii)] $\log_a(\frac{x}{y})=\log_a(x)-\log_a(y)$.
+\item[iv)] $\log_a(x^r)=r\log_a(x)$.
+\end{enumerate}
+$\linebreak$
 
 \textit{Demostración:} La demostración del teorema se realizará utilizando la definición de logaritmo natural base $a$ y usando las propiedades ya conocidas del logaritmo natural. 
 
 \begin{enumerate}
+\item[i)] Por demostrar $\log_a(xy)=\log_a(x)+\log_a(y)$.
 
-\item[i)]
-$$\begin{aligned}
- \log_a(xy) & = \frac{1}{\ln(a)}\ln(xy)=\frac{1}{\ln(a)}\left[ \ln(x)+\ln(y) \right]=\frac{1}{\ln(a)}\ln(x)+\frac{1}{\ln(a)}\ln(y) \\
- &  =\log_a(x)+\log_a(y). \\
-\end{aligned}$$
-
-\item[ii)]
-$$ \log_a(x^{-1})=\frac{1}{\ln(a)}\ln(x^{-1})=-\frac{1}{\ln(a)}\ln(x)=-\log_a(x). $$
-
-\item[iii)]
 \begin{equation*}
 \begin{split}
-\log_a\left(\frac{x}{y}\right) & =\frac{1}{\ln(a)}\log\left(\frac{x}{y}\right)=\frac{1}{\ln(a)}\left[ \ln(x)-\ln(y) \right] \\ 
-& =\frac{1}{\ln(a)}\ln(x)-\frac{1}{\ln(a)}\ln(y)=\log_a(x)-\log_a(y).
+ \log_a(xy) & = \frac{1}{\ln(a)}\ln(xy)=\frac{1}{\ln(a)}\left[ \ln(x)+\ln(y) \right]=\frac{1}{\ln(a)}\ln(x)+\frac{1}{\ln(a)}\ln(y) \\
+ &  =\log_a(x)+\log_a(y). \\
 \end{split}
 \end{equation*}
 
-\item[iv)]
-$$ \log_a\left(x^r\right)=\frac{r}{\ln(a)}\ln(x)=r\log_a(x). $$
+\item[ii)] Por demostrar $\log_a(x^{-1})=-\log_a(x)$.
 
+$$ \log_a(x^{-1})=\frac{1}{\ln(a)}\ln(x^{-1})=-\frac{1}{\ln(a)}\ln(x)=-\log_a(x). $$
+
+\item[iii)] Por demostrar $\log_a(\frac{x}{y})=\log_a(x)-\log_a(y)$.
+
+\begin{equation*}
+\begin{split}
+\log_a\left(\frac{x}{y}\right) & =\frac{1}{\ln(a)}\log\left(\frac{x}{y}\right)=\frac{1}{\ln(a)}\left[ \ln(x)-\ln(y) \right]=\frac{1}{\ln(a)}\ln(x)-\frac{1}{\ln(a)}\ln(y) \\
+& =\log_a(x)-\log_a(y).
+\end{split}
+\end{equation*}
+
+\item[iv)] Por demostrar $\log_a(x^r)=r\log_a(x)$.
+
+$$ \log_a\left(x^r\right)=\frac{r}{\ln(a)}\ln(x)=r\log_a(x). $$
 \end{enumerate}
 
 \begin{flushright}
@@ -1157,28 +1161,43 @@ $\linebreak$
 
 \subsection{\Col Límites relevantes para $\log_a(x)$}
 
-\textbf{Teorema:} Sea $a\in\mathbb{R}$ tal que $a>0$, entonces 
+$\linebreak$
 
-\setlength{\columnsep}{-0.6in}
-\begin{multicols}{2}
-    \begin{itemize}
-        \item[i)] $\limit{x}{\infty}\log_a(x)=\infty\quad$ si $\quad a>1$.
-        \item[ii)] $\limit{x}{\infty}\log_a(x)=-\infty\quad$ si $\quad 0<a<1$.
-        \item[iii)] $\limit{x}{0^+}\log_a(x)=-\infty\quad$ si $\quad a>1$.
-        \item[iv)] $\limit{x}{0^+}\log_a(x)=\infty\quad$ si $\quad 0<a<1$.
-    \end{itemize}
-\end{multicols}
+\textbf{Teorema:} Sea $a\in\mathbb{R}$ tal que $a>0$, entonces 
+\begin{enumerate}
+\item[i)] $\limit{x}{\infty}\log_a(x)=\infty\quad$ si $\quad a>1$.
+\item[ii)] $\limit{x}{\infty}\log_a(x)=-\infty\quad$ si $\quad 0<a<1$.
+\end{enumerate}
+
+$\linebreak$
 
 \textit{Demostración:}
-
 \begin{enumerate}
 \item[i)] Si $a>1$, entonces $\frac{1}{\ln(a)}>0$ de manera que 
 $$ \limit{x}{\infty}\log_a(x)=\limit{x}{\infty}\frac{1}{\ln(a)}\ln(x)=\frac{1}{\ln(a)}\limit{x}{\infty}\ln(x)=\infty. $$
 \item[ii)] Si $0<a<1$, entonces $\frac{1}{\ln(a)}<0$ de modo que 
 $$ \limit{x}{\infty}\log_a(x)=\limit{x}{\infty}\frac{1}{\ln(a)}\ln(x)=\frac{1}{\ln(a)}\limit{x}{\infty}\ln(x)=-\infty. $$
-\item[iii)] Si $a>1$, entonces $\frac{1}{\ln(a)}>0$ de manera que 
+\end{enumerate}
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+$\linebreak$
+
+\textbf{Teorema:} Sea $a\in\mathbb{R}$ tal que $a>0$, entonces
+\begin{enumerate}
+\item[i)] $\limit{x}{0^+}\log_a(x)=-\infty\quad$ si $\quad a>1$.
+\item[ii)] $\limit{x}{0^+}\log_a(x)=\infty\quad$ si $\quad 0<a<1$.
+\end{enumerate}
+
+$\linebreak$
+
+\textit{Demostración:}
+\begin{enumerate}
+\item[i)] Si $a>1$, entonces $\frac{1}{\ln(a)}>0$ de manera que 
 $$ \limit{x}{0^+}\log_a(x)=\limit{x}{0^+}\frac{1}{\ln(a)}\ln(x)=\frac{1}{\ln(a)}\limit{x}{0^+}\ln(x)=-\infty .$$
-\item[iv)] Si $0<a<1$, entonces $\frac{1}{\ln(a)}<0$ de modo que 
+\item[ii)] Si $0<a<1$, entonces $\frac{1}{\ln(a)}<0$ de modo que 
 $$ \limit{x}{0^+}\log_a(x)=\limit{x}{0^+}\frac{1}{\ln(a)}\ln(x)=\frac{1}{\ln(a)}\limit{x}{0^+}\ln(x)=\infty .$$
 \end{enumerate}
 
