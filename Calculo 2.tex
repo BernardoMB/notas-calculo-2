@@ -45,8 +45,11 @@
 % Derivada
 \newcommand{\derivate}[2]{\frac{\mathrm{d}}{\mathrm{d}#1} \left(  {#2}  \right)  }
 
+% Derivada sin parentesis
+\newcommand{\der}[1]{\frac{\mathrm{d}}{\mathrm{d}#1}}
+
 % Enesima derivada 
-\newcommand{\derivada}[3]{\frac{\mathrm{d}^{#1}}{\mathrm{d}#2} \left(  {#3}  \right)  }
+\newcommand{\derivada}[2]{\frac{\mathrm{d}^{#1}}{\mathrm{d}#2}}
 
 % Limite
 \newcommand{\limit}[2]{\lim_{#1\to #2}}
@@ -1186,8 +1189,131 @@ $$ \limit{x}{0^+}\log_a(x)=\limit{x}{0^+}\frac{1}{\ln(a)}\ln(x)=\frac{1}{\ln(a)}
 $\blacksquare$
 \end{flushright}
 
-\subsection{\Col La gráfica de la función $\log_a(x)$}
+\subsection{\Col La gráfica de la función $\log_a(x)$ con $a$ fijo}
 
+A continuación se examinaran las propiedades de la función $f(x)=\log_a(x)$ para hallar esbozar su gráfica.
 
+% \begin{multicols}{2}
+%     \begin{enumerate}
+%         \setcounter{enumi}{0}
+%         \item Dominio e imagen
+%         \item Imagen de puntos por los que pasa la \\ función.
+%         \item Primera derivada
+%         \item Intervalos de crecimiento \\ y decredimiento
+%         \item Puntos críticos estacionarios o \\ singulares
+%         \item Segunda de derivada
+%         \item Intervalos de concavidad positiva y negativa
+%         \item Puntos de inflexión
+%         \item Limites relevantes
+%         \item Comportamiento asintótico 
+%     \end{enumerate}
+% \end{multicols}
+
+\subsubsection{Dominio e imagen}
+$$Dom\left( \log_a(x) \right)=(0,\infty) \quad\quad\quad Img\left(\log_a(x)\right)=(-\infty,\infty)$$
+
+\subsubsection{Imagen de puntos por los que pasa la función}
+
+Pasa por $(1,0)$.
+
+\subsubsection{Primera derivada}
+
+$$\der{x}f(x)=\frac{1}{\ln(a)x}
+\left\{
+ \begin{array}{ll}
+  >0  & \mbox{si } 1<a \\
+  <0 & \mbox{si } 0<a<1 \\
+ \end{array}
+\right.$$
+
+Entonces la función es creciente en el intervalo $(0,\infty)$ cuando $1<a$ y decreciente en el intervalo $(0,\infty)$ cuando $0<a<1$.
+
+\subsubsection{Segunda derivada}
+$$\derivada{2}{x^2}f(x)=-\frac{1}{\ln(a)x^2}
+\left\{
+\begin{array}{ll}
+    >0 & \mbox{si } 0<a<1 \\
+    <0 & \mbox{si } 1<a
+\end{array}
+\right.$$
+
+Entonces la función tiene concavidad positica en el inertvalo $(0,\infty)$ cuando $0<a<1$ y tiene concavidad negativa en el intervalo $(0,\infty)$. En ningún caso se observan puntos de inflexión.
+
+\subsubsection{Comportamiento límite}
+
+$$
+\limf{x}\log_a(x)=\left\{
+\begin{array}{ll}
+    \infty & \mbox{si } 1<a \\
+    -\infty & \mbox{si } 0<a<1
+\end{array}    
+\right. 
+\quad\quad 
+\limit{x}{o^+} \log_a(x)=\left\{
+\begin{array}{ll}
+    -\infty & \mbox{si } 1<a \\
+    \infty & \mbox{si } 0<a<1
+\end{array}    
+\right. 
+$$
+
+\subsubsection{Gráfica de la función}
+
+Entonces la función tiene el siguiente aspecto:
+
+$$incuir grafico$$
+
+Se obervan los siguientes 4 casos:
+\begin{itemize}
+\item Si $1<a<b$ y $x>1$, entonces $$\log_a(x)=\frac{1}{\ln(a)}\ln(x)\geq \frac{1}{\ln(b)}\ln(x)=log_b(x).$$
+\item Si $1<a<b$ y $0<x<1$, entonces $$\log_a(x)=\frac{1}{\ln(a)}\ln(x)\leq \frac{1}{\ln(b)}\ln(x)=log_b(x).$$
+\item Si $0<a<b<1$ y $x>1$, entonces $$\log_a(x)=\frac{1}{\ln(a)}\ln(x)> \frac{1}{\ln(b)}\ln(x)=log_b(x).$$
+\item Si $0<a<b<1$ y $0<x<1$, entonces $$\log_a(x)=\frac{1}{\ln(a)}\ln(x)< \frac{1}{\ln(b)}\ln(x)=log_b(x).$$    
+\end{itemize}
+
+Entonces se puede demostrar el espacto del siguiente gráfico
+
+$$incluir grafico$$
+
+En resumen se tiene el siguiente grafico:
+
+$$incluir grafico$$
+
+\textbf{Teorema:} Para $x>0$ se tiene que
+$$ \int\!\ln(x)\mbox{ d}x=x\ln(x)-x+C $$
+
+\textit{Demostración:} Se tiene que 
+
+$$\begin{aligned}
+    \der{x}\left\{x\ln(x)-x+C\right\} & = \der{x}\left\{x\ln(x)\right\} -1  \\
+    & = \ln(x)+x\frac{1}{x}-1 \\ 
+    & = \ln(x) \\ 
+\end{aligned}$$
+
+Por lo tanto se tiene que
+
+$$x\ln(x)-x+C=\int\!\der{x}\left\{x\ln(x)-x+C\right\}\mbox{ d}x=\int\!\ln(x)\mbox{ d}x.$$
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\subsection{\Col Cambio de base}
+
+Se hallará la respuesta a preguntas similares a la siguiente: ¿Cuánto es $\log_a(x)$ si se conoce el valor de $\log_b(x)$ y $a\neq b$ con $a\neq 1$ y $b\neq 1$? Se sabe que 
+
+$$\log_a(x)=\frac{\ln(x)}{\ln(a)} \quad \mbox{y} \quad \log_b(x)=\frac{\ln(x)}{\ln(b)},$$
+$$\Leftrightarrow \quad \ln(x)=\log_a(x)\ln(a) \quad \mbox{y} \quad \ln(x)=\log_b(x)\ln(b), $$
+$$\Leftrightarrow \quad \log_a(x)\ln(a)=\log_b(x)\ln(b).$$
+
+Por lo tanto
+
+$$\log_a(x)= \frac{\ln(b)}{\ln(a)}\log_b(x).$$
+
+En este caso, el cociente $\frac{\ln(b)}{\ln(a)}$ es el factor de cambio de base.
+
+[Poner ejercicios ]
+
+\section{\Col Funciones hiperbólicas}
 
 \end{document}
