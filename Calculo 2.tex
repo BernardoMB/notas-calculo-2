@@ -1,5 +1,7 @@
 \documentclass[pts12]{article}
 
+% Revisar TODOs.
+
 \usepackage[utf8]{inputenc}
 \usepackage[amsmath]{}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
@@ -21,6 +23,8 @@
 \usepackage{twoopt}
 \usepackage{hyperref}
 \usepackage{verbatim}
+% Spacing for equations in tables
+\usepackage{tabu}
 
 \graphicspath{ {images/} }
 
@@ -32,6 +36,10 @@
 
 \everymath{\displaystyle}
 
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\senh}{senh}
+\DeclareMathOperator{\csch}{csch}
 
 % Para cambiar de color el texto. La lista de colores se encuentra en la siguiente liga: "https://www.sharelatex.com/learn/Using_colours_in_LaTeX". Ejemplos en la liguiente liga: "https://www.sharelatex.com/project/59a64bd5cb832f0ec46b226b".
 \newcommand{\Col}{\color{ProcessBlue}} 
@@ -1315,5 +1323,119 @@ En este caso, el cociente $\frac{\ln(b)}{\ln(a)}$ es el factor de cambio de base
 [Poner ejercicios ]
 
 \section{\Col Funciones hiperbólicas}
+
+\textbf{Definición: (Seno y coseno hiperbólico)} El seno hiperbólico es una función $senh:\mathbb{R}\rightarrow\mathbb{R}$ tal que 
+$$senh(x)=\frac{e^x-e^{-x}}{2}\quad\quad\forall x\in\mathbb{R},$$
+y el coseno hiperbólico es una función $cosh:\mathbb{R}\rightarrow\mathbb{R}$ tal que 
+$$cosh(x)=\frac{e^x+e^{-x}}{2}\quad\quad\forall x\in\mathbb{R}.$$
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\noindent A partir de las definiciones anteriores de pueden definir el resto de las funciones hiperbólicas.
+$$\begin{array}{lll}
+    \tanh:\mathbb{R}\rightarrow\mathbb{R}\quad\quad\quad & \tanh(x)=\frac{\senh(x)}{\cosh(x)}=\frac{e^x-e^{-x}}{e^x+e^{-x}}\quad\quad\quad & \forall x\in\mathbb{R} \\
+    \\
+    \coth:\mathbb{R}\rightarrow\mathbb{R}\quad\quad\quad & \coth(x)=\frac{\cosh(x)}{\senh(x)}=\frac{e^x+e^{-x}}{e^x-e^{-x}}\quad\quad\quad & \forall x\in\mathbb{R} \\
+    \\
+    \sech:\mathbb{R}\rightarrow\mathbb{R}\quad\quad\quad & \sech(x)=\frac{1}{\cosh(x)}=\frac{2}{e^x+e^{-x}}\quad\quad\quad & \forall x\in\mathbb{R} \\
+    \\
+    \csch:\mathbb{R}\rightarrow\mathbb{R}\quad\quad\quad & \csch(x)=\frac{1}{\senh(x)}=\frac{2}{e^x-e^{-x}}\quad\quad\quad & \forall x\in\mathbb{R} \\
+\end{array}$$
+
+% Incluir la motivación de estas funciones
+
+Las analogias entre el mundo trigonométrico y el mundo hiperbólico son diversas. A continuación se muestran algunas propiedades.
+
+\hspace{1cm}
+
+\begin{center}
+{\tabulinesep=1.2mm
+\begin{tabu} {|c|c|}
+    \hline
+    \textbf{Mundo hiperbólico} &  \textbf{Mundo trigonométrico} \\ 
+    \hline
+    $\der{x}\senh(x)=\cosh(x)$ & $\der{x}\sen(x)=\cos(x)$ \\
+    \hline
+    $\der{x}\cosh(x)=\senh(x)$ & $\der{x}\cos(x)=\sen(x)$ \\ [0.5ex]
+    \hline
+    $\cosh(x)^2-\senh(x)^2=1$ & $\cosh(x)^2+\senh(x)^2=1$ \\
+    \hline
+$\senh(x\pm y)=\senh(x)\cosh(y)\pm \senh(y)\cosh(x)$ & $\begin{array}{c}
+    \sen(x\pm y)=\cos(x)\sen(y)\pm \cos(y)\sen(x) \\ 
+    \cos(x\pm y)=\cos(x)\cos(y)\mp \sen(y)\sen(x) \\
+\end{array}$ \\
+    \hline
+    Ley de De Moivre & \\
+    $\left(\cosh(x)+\senh(x)\right)^2=\cosh(nx)+\senh(nx)$ & $\left(\cos(x)+i\sen(x)\right)^2=\cos(nx)+i\sen(nx)$ \\
+    \hline
+\end{tabu}}
+\end{center}
+
+% TODO: incluir demostracion%
+
+\hspace{1cm}
+
+A continuacón de muestran algunas antderivadas de las funciones del mundo hiperbólico y del mundo trigonométrico:
+
+\hspace{1cm}
+
+% TODO: poner los resultados en stand by.
+\begin{center}
+{\tabulinesep=1.2mm
+\begin{tabu} {|c|c|}
+    \hline
+    \textbf{Mundo hiperbólico} &  \textbf{Mundo trigonométrico} \\
+    $\integ{\senh(x)}{dx}=\cosh(x)+c$ & $\integ{\sen(x)}{dx}=-\cos(x)+c$ \\
+    \hline
+    $\integ{\cosh(x)}{dx}=\senh(x)+c$ & $\integ{\cos(x)}{dx}=\sen(x)+c$ \\
+    \hline
+    $\integ{\tanh(x)}{dx}=\ln|\cosh(x)|+c$ & $\integ{\tan(x)}{dx}=-\ln|\cos(x)|+c$ \\
+    \hline
+    $\integ{\coth(x)}{dx}=\ln|\senh(x)|+c$ & $\integ{\cot(x)}{dx}=\ln|\sen(x)|+c$ \\
+    \hline
+    $\integ{\sech(x)}{dx}=standby$ & $\integ{\sec(x)}{dx}=\ln|\sec(x)+\tan(x)|+c$ \\
+    \hline
+    $\integ{\csch(x)}{dx}=standby$ & $\integ{\csc(x)}{dx}=\ln|\csc(x)-\cot(x)|+c$ \\
+    \hline
+\end{tabu}}
+\end{center}
+
+\noindent\textbf{Teorema:} Para toda $x\in\mathbb{R}$ se tiene lo siguiente:
+
+\setlength{\columnsep}{-0.6in}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $\der{x}\tanh(x)=\sech(x)^2$
+        \item $\der{x}\sech(x)=-\sech(x)\tanh(x)$
+        \item $\der{x}\coth(x)=-\csch(x)^2$
+        \item $\der{x}\csch(x)=-\csch(x)\coth(x)$
+    \end{enumerate}
+\end{multicols}
+
+% TODO: Demostrar el teorema anterior. Algunas demostraciones se encuentran en la tarea.
+
+\subsection{\Col Gráficas de las funciones hiperbólicas}
+
+\subsubsection{$\senh(x)$}
+
+\begin{enumerate}
+\item $Dom(\senh)=(-\infty, \infty)$, $Img(\senh)=(-\infty, \infty)$ y pasa por el punto $(0,0)$. Es función impar, es decir, $\senh(-x)=-\senh(x)$.
+\item $\der{x}\senh(x)=\cosh(x)=\frac{e^x+e^{-x}}{2}>0\quad\forall x\in\mathbb{R} \Rightarrow IC=(-\infty, \infty)$, $ID=\emptyset$. No existen puntos críticos estacionarios.
+\item $$\derivada{2}{x^2}\senh(x)=\der{x}\cosh(x)=\senh(x)=\frac{e^x-e^{-x}}{2}=\left\{
+    \begin{array}{ll}
+        <0 & $si $ x<0 \Rightarrow IPC=(0,\infty)\\
+        =0 & $si $ x=0 \Rightarrow ICN=(-\infty,0)\\
+        >0 & $si $ x>0 \Rightarrow PI=(0,0)\\
+    \end{array}    
+    \right. $$
+\item $$\limf{x}\senh(x)=\limf{x}\frac{e^x-e^{-x}}{2}=\infty \quad\quad \lim_{x\to-\infty}\senh(x)=\lim_{x\to-\infty}\frac{e^x-e^{-x}}{2}=-\infty$$
+\end{enumerate}
+
+Entonces la gráfica de la función $\senh(x)$ tiene el siguiente aspecto:
+
+% TODO: Poner la grafica que se debe de poner
+$$incluir grafico$$
 
 \end{document}
