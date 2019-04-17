@@ -1441,7 +1441,7 @@ $$incluir grafico$$
 \subsubsection{$\cosh(x)$}
 
 \begin{enumerate}
-\item $Dom(\cosh)=(-\infty, \infty)$, $Img(\cosh)=(1, \infty)$ y pasa por el punto $(0,1)$. Es función pas, es decir, $\cosh(-x)=\cosh(x)$.
+\item $Dom(\cosh)=(-\infty, \infty)$, $Img(\cosh)=(1, \infty)$ y pasa por el punto $(0,1)$. Es función par, es decir, $\cosh(-x)=\cosh(x)$.
 \item $$\der{x}\cosh(x)=\senh(x)=\frac{e^x-e^{-x}}{2}\left\{
     \begin{array}{ll}
         >0 & $si $ x>0 \Rightarrow IC=(0,\infty)\\
@@ -1450,7 +1450,27 @@ $$incluir grafico$$
     \end{array}    
     \right.$$
 \item $\derivada{2}{x^2}\cosh(x)=\der{x}\senh(x)=\cosh(x)=\frac{e^x+e^{-x}}{2}>0\quad\forall x\in\mathbb{R} \Rightarrow IP=(-\infty, \infty)$, $IN=\emptyset$. No existen puntos de inflexión.
-\item $$\limf{x}\senh(x)=\limf{x}\frac{e^x-e^{-x}}{2}=\infty \quad\quad \lim_{x\to-\infty}\senh(x)=\lim_{x\to-\infty}\frac{e^x-e^{-x}}{2}=-\infty$$
+\item $$\limf{x}\cosh(x)=\limf{x}\frac{e^x+e^{-x}}{2}=\infty \quad\quad \lim_{x\to-\infty}\cosh(x)=\lim_{x\to-\infty}\frac{e^x+e^{-x}}{2}=\infty$$
+\end{enumerate}
+
+Entonces la gráfica de la función $\senh(x)$ tiene el siguiente aspecto:
+
+% TODO: Poner la grafica que se debe de poner
+$$incluir grafico$$
+
+\subsubsection{$\tanh(x)$}
+
+\begin{enumerate}
+\item $Dom(\tanh)=(-\infty, \infty)$, $Img(\tanh)=(-1, 1)$ y pasa por el punto $(0,0)$. Es función impar, es decir, $\tanh(-x)=-\tanh(x)$.
+\item \item $\der{x}\tanh(x)=\sech(x)^2=\frac{2}{e^x+e^{-x}}>0\quad\forall x\in\mathbb{R} \Rightarrow IC=(-\infty, \infty)$, $ID=\emptyset$. No existen puntos críticos estacionarios.
+\item $$\derivada{2}{x^2}\tanh(x)=-2\sech(x)^2tanh(x)\left\{
+    \begin{array}{ll}
+        >0 & $si $ x<0 \Rightarrow IC=(0,\infty)\\
+        =0 & $si $ x=0 \Rightarrow ID=(-\infty,0)\\
+        <0 & $si $ x>0 \Rightarrow PI=(0,1).\\
+    \end{array}    
+    \right.$$
+\item $$\limf{x}\cosh(x)=\limf{x}\frac{e^x+e^{-x}}{2}=\infty \quad\quad \lim_{x\to-\infty}\cosh(x)=\lim_{x\to-\infty}\frac{e^x+e^{-x}}{2}=\infty$$
 \end{enumerate}
 
 Entonces la gráfica de la función $\senh(x)$ tiene el siguiente aspecto:
