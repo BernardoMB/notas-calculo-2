@@ -80,17 +80,17 @@
 \iffalse
 \begin{equation*}
 \begin{split}
-     \mbox{Empezar aqui}  & \mbox{Continuar aqui}  \\
- & \mbox{Lo que sigue abajo} \\
- & \mbox{Lo que sigue mas abajo} \}
+    \mbox{Empezar aqui}  & \mbox{Continuar aqui}  \\
+    & \mbox{Lo que sigue abajo} \\
+    & \mbox{Lo que sigue mas abajo} \}
 \end{split}
 \end{equation*}
 
 \begin{equation*}
 \begin{split}
- a^xa^y & =\exp(x\ln(a))\cdot\exp(y\ln(a)) \\
- 		& =\exp(x\ln(a)+y\ln(a))  \\
- 		& =\exp(\ln(a)(x+y)) \}
+    a^xa^y & =\exp(x\ln(a))\cdot\exp(y\ln(a)) \\
+    & =\exp(x\ln(a)+y\ln(a))  \\
+    & =\exp(\ln(a)(x+y)) \}
 \end{split}
 \end{equation*}
 
@@ -113,12 +113,12 @@ $$ incluir grafico $$
 
 $$ \mathbb{A}(x) =
 \left\{
- \begin{array}{ll}
-  0  & \mbox{si } x=a \\
-  \\ \mbox{área bajo $f$} & \mbox{si } x\in [a,b]
- \end{array}
+    \begin{array}{ll}
+        0  & \mbox{si } x=a \\
+        \\ \mbox{área bajo $f$} & \mbox{si } x\in [a,b]
+    \end{array}
 \right.$$
- 
+
 $\mathbb{A}(b)$ denota el área acumulada debajo de la gráfica de $f$ en el intervalo [a,b]. 
 
 \item[\Col •] $\mathbb{A}:[a,b]\longrightarrow\mathbb{R}$ satisface que:
@@ -128,17 +128,17 @@ $\mathbb{A}(b)$ denota el área acumulada debajo de la gráfica de $f$ en el int
 \item[b)] Si $c\in [a,b]$, entonces $\mathbb{A}(a,b)=\mathbb{A}(a,c)+\mathbb{A}(c,b)$
 \item[c)] Si $m$ es mínimo y $M$ es el máximo de la función en el intervalo $[a,b]$, entonces $m\leq f(x)\leq M$ y $m(b-a)\leq \mathbb{A}(b)\leq M(b-a)$ 
 \end{enumerate} 
- 
+
 $$ incluir grafico $$
 
 \item[\Col •] La notación integral: 
 
 $$ \mathbb{A}(x)=\int_{a}^{x} \! {f(t)} \, \mathrm{dt} =
 \left\{
- \begin{array}{ll}
-  0  & \mbox{si } x=a \\
-  \\ \mbox{área bajo $f$} & \mbox{si } x\in [a,b]
- \end{array}
+    \begin{array}{ll}
+        0  & \mbox{si } x=a \\
+        \\ \mbox{área bajo $f$} & \mbox{si } x\in [a,b]
+    \end{array}
 \right.$$
 
 \end{itemize}
@@ -204,8 +204,8 @@ si $h<0$, entonces $x+h<x$ pero $c\in [x,x+h]$, de manera que si $h\longrightarr
 
 Por el caso 1 y por el caso 2, se tiene que $D^+(\mathbb{A}(x))=f(x)$ y $D^-(\mathbb{A}(x))=f(x)$, entonces $\mathbb{A}'(x)=f(x)$. \\
 
-	Por el teorema fundamental del cálculo parte 1, vemos que el problema de hallar la función de área se convierte en hallar una primitiva de la función bajo la cual se quiere encontrar el área. 
-	
+Por el teorema fundamental del cálculo parte 1, vemos que el problema de hallar la función de área se convierte en hallar una primitiva de la función bajo la cual se quiere encontrar el área. 
+
 \begin{flushright}
 $\blacksquare$
 \end{flushright}	
@@ -269,10 +269,10 @@ $$ incluirgrafico $$
 \item[\Col •] Sea $F(t)=\ln(-t)+C$ y $G(t)=\ln(t)+C$, entonces $\frac{d}{dt}F(t)=\frac{1}{t}$ y $\frac{d}{dt}G(f)=\frac{1}{t}$, entonces se sigue que 
 
 $$ \xinteg{}{}{\frac{1}{t}}{dt}= \left\{
- \begin{array}{ll}
-  \ln(-t)+C  & \mbox{si } t<0 \\
-  \\ \ln(t)+C & \mbox{si } t>0
- \end{array}
+    \begin{array}{ll}
+        \ln(-t)+C  & \mbox{si } t<0 \\
+        \\ \ln(t)+C & \mbox{si } t>0
+    \end{array}
 \right.$$
 
 Por lo tanto $\xinteg{}{}{\frac{1}{t}}{dt}=\ln|t|+C$ si $t\neq 0$. En general, $\xinteg{}{}{\frac{u'}{u}}{du}=\ln|u|+C$ si $u\neq 0$.
@@ -304,7 +304,7 @@ $\ln\left(\frac{a}{b}\right)=\ln(ab^{-1})=\ln(a)+\ln(b^{-1})=\ln(a)-\ln(b)$.
 
 Sea $F(a)=\ln(a^{r})\Rightarrow \frac{d}{da}F(a)=\frac{r}{a}$. Sea $G(a)=r\ln(a)\Rightarrow\frac{d}{da}G(a)=\frac{r}{a}$, entonces $F(a)$ y $G(a)$ tienen la misma derivada, por lo tanto, difieren por una constante $C$, $\forall a\in (0,\infty)$, si y sólo si $F(a)=G(a)+C$, $\forall a\in (0,\infty)$.
 
- Si $a=1 \Rightarrow F(1)=G(1)+C=r\ln(1)+C=0+C=C\Leftrightarrow F(1)=C$, pero $F(1)=\ln(1^{r})=\ln(1)=0\Leftrightarrow C=0\Leftrightarrow F(a)=G(a)\Leftrightarrow r\ln(a)=\ln(a^r)\Leftrightarrow \ln(a^r)=r\ln(a)$. 
+Si $a=1 \Rightarrow F(1)=G(1)+C=r\ln(1)+C=0+C=C\Leftrightarrow F(1)=C$, pero $F(1)=\ln(1^{r})=\ln(1)=0\Leftrightarrow C=0\Leftrightarrow F(a)=G(a)\Leftrightarrow r\ln(a)=\ln(a^r)\Leftrightarrow \ln(a^r)=r\ln(a)$. 
 
 \begin{flushright}
 $\blacksquare$
@@ -472,13 +472,13 @@ $=\xinteg{}{}{\frac{(\cot(t)-\csc(t))'}{\cot(t)-\csc(t)}}{dt}=\ln|\cot(t)-\csc(t
 \item[\Col •] \textbf{Teorema:} Sea $y=f(x)$, entonces $y'=y(\ln(f(x)))'$.
 
 \textbf{Demostración:}
-  
+
 Si $y=f(x)$, entonces $\ln(y)=\ln(f(x))$, de manera que $\frac{d}{dx}\ln(y)=\frac{d}{dx}\ln(f(x))$, así pues, $\frac{y'}{y}=(\ln(f(x)))'$, por lo tanto $y'=y(\ln(f(x)))'$.  
-  
+
 \begin{flushright}
 $\blacksquare$
 \end{flushright}  
-  
+
 \end{itemize}
 
 \newpage
@@ -843,11 +843,11 @@ $\square$
 
 Se observó que si $f(x)=a^x$, entonces $\derivate{x}{f(x)}=a^x\ln(a)$, por lo tanto $\integ[][]{a^x\ln(a)}{dx}=a^x+C$, de manera que $\ln(a)\integ[][]{a^x}{dx}=a^x+C$, se sigue que 
 $$\integ[][]{a^x}{dx}=\frac{a^x}{\ln(a)}+\frac{C}{\ln(a)}=\frac{a^x}{\ln(a)}+C'$$  
- 
+
 \begin{flushright}
 $\blacksquare$
 \end{flushright} 
- 
+
 \end{itemize}
 
 \subsection{\Col La gráfica de la función $a^x$ con $a$ fijo}
@@ -859,11 +859,11 @@ $\blacksquare$
 \item[0)] $Dom(a^x)=(-\infty,\infty)$, $Im(a^x)=(0,\infty)$ y Pasa por los puntos $(0,1)$ y $(1,a)$.
 \item[1)] $$ \derivate{x}{a^x}=a^x\ln(a)
 \left\{
- \begin{array}{lll}
-  <0  & \mbox{si } 0<a<1 \\
-  \\ =0 & \mbox{si } a=1 \\
-  \\ >0 & \mbox{si } 1<a \\
- \end{array}
+    \begin{array}{lll}
+        <0  & \mbox{si } 0<a<1 \\
+        \\ =0 & \mbox{si } a=1 \\
+        \\ >0 & \mbox{si } 1<a \\
+    \end{array}
 \right.$$
 
 Por lo tanto:
@@ -895,10 +895,10 @@ Por lo tanto:
 
 \item[2)] $$ \frac{\mathrm{d^2}}{\mathrm{d}x} \left(  {a^x}  \right)  
 \left\{
- \begin{array}{ll}
-  >0  & \mbox{si } a\neq 1 \\
-  \\ =0 & \mbox{si } a=1 \\
- \end{array}
+    \begin{array}{ll}
+        >0  & \mbox{si } a\neq 1 \\
+        \\ =0 & \mbox{si } a=1 \\
+    \end{array}
 \right.$$
 
 Por lo tanto:
@@ -974,11 +974,11 @@ Si $r=\ln(a)-\ln(b)$, entonces $r<0$ y
 
 $$\frac{a^x}{b^x}=\exp(x\cdot r)
 \left\{
- \begin{array}{lll}
-  <1  & \mbox{si } x>0 & \mbox{, entonces} \quad a^x<b^x \\
-  \\ =1 & \mbox{si } x=0 & \mbox{, entonces} \quad a^x=b^x \\
-  \\ >1 & \mbox{si } x<0 & \mbox{, entonces} \quad a^x>b^x \\
- \end{array}
+    \begin{array}{lll}
+        <1  & \mbox{si } x>0 & \mbox{, entonces} \quad a^x<b^x \\
+        \\ =1 & \mbox{si } x=0 & \mbox{, entonces} \quad a^x=b^x \\
+        \\ >1 & \mbox{si } x<0 & \mbox{, entonces} \quad a^x>b^x \\
+    \end{array}
 \right.$$
 
 \begin{flushright}
@@ -1001,11 +1001,11 @@ $\linebreak$
 \textit{Demostración:} Sea $\frac{a^x}{b^x}=\exp(x[\ln(a)-\ln(b)])$. Si $r=\ln(a)-\ln(b)$, entonces $r<0$ y
 
 $$ \frac{a^x}{b^x}=\exp(r\cdot x)\left\{
- \begin{array}{lll}
-  <1  & \mbox{si } x>0 & \mbox{, entonces} \quad a^x<b^x \\
-  \\ =1 & \mbox{si } x=0 & \mbox{, entonces} \quad a^x=b^x \\
-  \\ >1 & \mbox{si } x<0 & \mbox{, entonces} \quad a^x>b^x \\
- \end{array}
+    \begin{array}{lll}
+        <1  & \mbox{si } x>0 & \mbox{, entonces} \quad a^x<b^x \\
+        \\ =1 & \mbox{si } x=0 & \mbox{, entonces} \quad a^x=b^x \\
+        \\ >1 & \mbox{si } x<0 & \mbox{, entonces} \quad a^x>b^x \\
+    \end{array}
 \right..$$
 
 \begin{flushright}
@@ -1037,11 +1037,11 @@ $\linebreak$
 
 \begin{equation*}
 \begin{split}
- a^xa^y & =\exp(x\ln(a))\cdot\exp(y\ln(a))=\exp(x\ln(a)+y\ln(a))=\exp(\ln(a)(x+y)) =\exp(\ln(a^{x+y}))\\
+    a^xa^y & =\exp(x\ln(a))\cdot\exp(y\ln(a))=\exp(x\ln(a)+y\ln(a))=\exp(\ln(a)(x+y)) =\exp(\ln(a^{x+y}))\\
 	& =a^{x+y}.
 \end{split}
 \end{equation*}
- 
+
 \item[ii)] Por demostrar  $a^{-x}=\frac{1}{a^{-x}}$.
 
 \begin{equation*}
@@ -1054,9 +1054,9 @@ $\linebreak$
 
 \begin{equation*}
 \begin{split}
- \frac{a^x}{a^y} & =\frac{\exp(x\ln(a))}{\exp(y\ln(a)}=\exp(x\ln(a))\cdot\exp(y\ln(a))^{-1}=\exp(x\ln(a))\cdot\exp(-y\ln(a)) \\
- 		& =\exp(x\ln(a)-y\ln(a))=\exp(\ln(a)(x-y))=\exp(\ln(a^{x-y})) \\
- 		& =a^{x-y}.
+    \frac{a^x}{a^y} & =\frac{\exp(x\ln(a))}{\exp(y\ln(a)}=\exp(x\ln(a))\cdot\exp(y\ln(a))^{-1}=\exp(x\ln(a))\cdot\exp(-y\ln(a)) \\
+    & =\exp(x\ln(a)-y\ln(a))=\exp(\ln(a)(x-y))=\exp(\ln(a^{x-y})) \\
+    & =a^{x-y}.
 \end{split}
 \end{equation*}
 
@@ -1064,7 +1064,7 @@ $\linebreak$
 
 \begin{equation*}
 \begin{split}
- \left( a^x \right)^y &=\exp(x\ln(a))^y=\exp(xy\ln(a))=\exp(\ln(a^{xy}))=a^{xy}.  \\
+    \left( a^x \right)^y &=\exp(x\ln(a))^y=\exp(xy\ln(a))=\exp(\ln(a^{xy}))=a^{xy}.  \\
 \end{split}
 \end{equation*}
 
@@ -1140,8 +1140,8 @@ $\square$
 
 \item[i)]
 $$\begin{aligned}
- \log_a(xy) & = \frac{1}{\ln(a)}\ln(xy)=\frac{1}{\ln(a)}\left[ \ln(x)+\ln(y) \right]=\frac{1}{\ln(a)}\ln(x)+\frac{1}{\ln(a)}\ln(y) \\
- &  =\log_a(x)+\log_a(y). \\
+    \log_a(xy) & = \frac{1}{\ln(a)}\ln(xy)=\frac{1}{\ln(a)}\left[ \ln(x)+\ln(y) \right]=\frac{1}{\ln(a)}\ln(x)+\frac{1}{\ln(a)}\ln(y) \\
+    &  =\log_a(x)+\log_a(y). \\
 \end{aligned}$$
 
 \item[ii)]
@@ -1228,10 +1228,10 @@ Pasa por $(1,0)$.
 
 $$\der{x}f(x)=\frac{1}{\ln(a)x}
 \left\{
- \begin{array}{ll}
-  >0  & \mbox{si } 1<a \\
-  <0 & \mbox{si } 0<a<1 \\
- \end{array}
+    \begin{array}{ll}
+        >0  & \mbox{si } 1<a \\
+        <0 & \mbox{si } 0<a<1 \\
+    \end{array}
 \right.$$
 
 Entonces la función es creciente en el intervalo $(0,\infty)$ cuando $1<a$ y decreciente en el intervalo $(0,\infty)$ cuando $0<a<1$.
