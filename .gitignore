@@ -6,3 +6,25 @@ Calculo 2.log
 Calculo 2.out
 Calculo 2.synctex.gz
 Calculo 2.dvi
+
+# IDE - VSCode
+vscode/*
+vscode/settings.json
+vscode/tasks.json
+vscode/launch.json
+vscode/extensions.json
+.vscode/*
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+!.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+/.vscode/*
+/.vscode/settings.json
+/.vscode/tasks.json
+/.vscode/launch.json
+/.vscode/extensions.json

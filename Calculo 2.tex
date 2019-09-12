@@ -25,6 +25,8 @@
 \usepackage{verbatim}
 % Spacing for equations in tables
 \usepackage{tabu}
+% Place figures exacly where you want them
+\usepackage{float}
 
 % Paragraph identation
 \setlength{\parindent}{0cm}
@@ -58,6 +60,9 @@
 
 % Integral
 \newcommand{\xinteg}[4]{\int_{#1}^{#2} \! {#3} \, \mathrm{#4}}
+
+% Integral
+\newcommand{\integrate}[4]{\int_{#1}^{#2} \! {#3} \, \mathrm{d} {#4}}
 
 % Integral con argumentos opcionales
 \newcommandtwoopt{\integ}[4][][]{\int_{#1}^{#2} \! {#3} \, \mathrm{#4}}
@@ -116,6 +121,12 @@
 {\par\medskip\noindent\textbf{Demostración:}\rmfamily}
 {\Col\hfill$\quad \blacksquare$\vspace{0.5cm}}
 
+% Example
+\newcounter{example}[section]
+\newenvironment{example}[1][]
+{\vspace{0.5cm}\refstepcounter{example}\par\medskip\noindent\textbf{\Col Ejemplo~\thesection.\theexample. #1}\rmfamily}
+{\Col\hfill$\quad \square$\vspace{0.5cm}}
+
 
 %%%%%%%%%%%%%%
 %% SNIPPETS %%
@@ -151,7 +162,7 @@
 
 \subsection{\col{Area debajo de una gráfica}}
 
-Se quiere hallar el área debajo de la gráfica de una función (como la que se muestra en la figura \ref{fig:fig1}):
+Se quiere hallar el área debajo de la gráfica de una función (como la que se muestra en la figura \ref{fig:fig1}) en algun intervalo determinado:
 
 \begin{figure}[h]
     \centering
@@ -162,18 +173,16 @@ Se quiere hallar el área debajo de la gráfica de una función (como la que se 
 
 \begin{definition}[(El área bajo f)]
     Sea $f$ una función continua en $[a,b]$ no negativa y sea $\mathbb{A}:[a,b]\longrightarrow\mathbb{R}$ como sigue:
-    $$ \mathbb{A}(x) = \left\{
+    $$\mathbb{A}(x) = \left\{
         \begin{array}{ll}
             0  & \mbox{si } x=a \\
-            \\ \mbox{área acumulada bajo $f$} & \mbox{si } x\in [a,b]
+            \\ \mbox{área acumulada bajo $f$ hasta $x$} & \mbox{si } x\in [a,b].
         \end{array}
     \right.$$
-    
-    $\mathbb{A}(b)$ denota el área acumulada debajo de la gráfica de $f$ en el intervalo [a,b].
+En esta definición, $\mathbb{A}(b)$ denota el área acumulada debajo de la gráfica de $f$ en el intervalo [a,b].
 \end{definition}
 
 $\mathbb{A}:[a,b]\longrightarrow\mathbb{R}$ satisface que:
-
 \begin{enumerate}
     \item[a)] Por definición, $\mathbb{A}(a)=0$.
     \item[b)] Si $c\in [a,b]$, entonces $\mathbb{A}(a,b)=\mathbb{A}(a,c)+\mathbb{A}(c,b)$.
@@ -197,6 +206,20 @@ $$ \mathbb{A}(x)=\int_{a}^{x} \! {f(t)} \, \mathrm{dt} =
     \end{array}
 \right.$$
 
+\begin{example}[(Ejemplo ilustrativo)]
+    Sea $I=[a,b]=[0,1]$ y $f(x)=x$, entonces $\exists c \in [0,1]$ tal que
+    $$\integrate{a}{b}{f(x)}{x}=\integrate{0}{1}{f(x)}{x}=f(c)(b-a)=c(1-0)=c.$$
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.4]{images/fig2-1.png}
+        \caption{Área debajo de la gráfica de $f$.}
+        \label{fig:fig2}
+    \end{figure}
+
+    Es claro que el área acumulada es igual $\frac{1}{2}$. Entonces, en efecto, $\exists c \in [0,1]$ tal que
+    $$f(c)(1-0)=f(c)=\integrate{0}{1}{f(x)}{x}=\frac{1}{2}\quad\Rightarrow\quad c=\frac{1}{2}.$$
+\end{example}
+
 \subsection{\col{El teorema del valor medio para integrales (TVMI)}}
 
 \begin{theorem}[(Teorema del valor medio para integrales)]
@@ -208,7 +231,7 @@ $$ \mathbb{A}(x)=\int_{a}^{x} \! {f(t)} \, \mathrm{dt} =
     Sea $m$ y $M$ tal que $m\leq f(x)\leq M$ $\forall x\in [a,b]$, entonces
     $$ m(b-a)\leq \int_{a}^{b} \! {f(t)} \, \mathrm{dt}\leq M(b-a) $$ 
     $$ \Rightarrow m\leq \frac{\int_{a}^{b} \! {f(t)} \, \mathrm{dt}}{b-a}\leq M $$
-    El teorema del Bolzano establece que una función continua ``no se salta valores", entonces
+    El teorema del valor medio de Bolzano establece que una función continua ``no se salta valores", entonces
     $$ f(s)=m\leq \frac{\int_{a}^{b} \! {f(t)} \, \mathrm{dt}}{b-a}\leq M=f(t) \quad \mbox{para algún} \quad s,t\in [a,b] $$
     $$ \Rightarrow f(c)=\frac{\int_{a}^{b} \! {f(t)} \, \mathrm{dt}}{b-a} \quad \mbox{para algún} \quad c\in [a,b] $$
     es decir, $f(c)=\frac{\int_{a}^{b} \! {f(t)} \, \mathrm{dt}}{b-a}$ es un valor que alcanza la función, pues $f(c)=\frac{\int_{a}^{b} \! {f(t)} \, \mathrm{dt}}{b-a}$ está entre el mínimo y el máximo.
@@ -243,10 +266,10 @@ $$ \mathbb{A}(x)=\int_{a}^{x} \! {f(t)} \, \mathrm{dt} =
 
     Por el teorema del valor medio para integrales, existe $c\in [x+h,x]$ tal que 
 
-    $$\lim_{h\to 0} \frac{-\int_{x+h}^{x} \! {f(t)} \, \mathrm{dt}}{h}=\lim_{h\to 0}\frac{-f(c)(x-(x+h))}{h}=\lim_{h\to 0}f(c)$$
+    $$\lim_{h\to 0} \frac{-\int_{x+h}^{x} \! {f(t)} \, \mathrm{dt}}{h}=\lim_{h\to 0}\frac{-f(c)(x-(x+h))}{h}=\lim_{h\to 0}f(c).$$
 
-    si $h<0$, entonces $x+h<x$ pero $c\in [x,x+h]$, de manera que si $h\longrightarrow 0^-$, entonces $c\longrightarrow x^-$, entonces $\lim_{h\to 0^-}f(c)=f(x)$, entonces $D^-(\mathbb{A}(x))=f(x)$
-
+    Si $h<0$, entonces $x+h<x$ pero $c\in [x,x+h]$, de manera que si $h\longrightarrow 0^-$, entonces $c\longrightarrow x^-$, entonces $\lim_{h\to 0^-}f(c)=f(x)$, de manera que $D^-(\mathbb{A}(x))=f(x).$
+    \vspace{0.3cm}
     Por el caso 1 y por el caso 2, se tiene que $D^+(\mathbb{A}(x))=f(x)$ y $D^-(\mathbb{A}(x))=f(x)$, entonces $\mathbb{A}'(x)=f(x)$.
     \vspace{0.3cm}
     \par Por el teorema fundamental del cálculo parte 1, vemos que el problema de hallar la función de área se convierte en hallar una primitiva de la función bajo la cual se quiere encontrar el área. 
@@ -260,16 +283,16 @@ $$ \mathbb{A}(x)=\int_{a}^{x} \! {f(t)} \, \mathrm{dt} =
 \begin{proof}
     Sea $G(x)=\int_{a}^{x} \! {f(t)} \, \mathrm{dt}$ y sea $F(x)$ tal que $F'(x)=f(x)$, antiderivadas de $f(x)$ (dos funciones cuyas derivadas son $f(x)$), entonces $F(x)$ y $G(x)$ difieren por una contante $C$:
 
-    $$ F(x)=G(x)+C \quad \forall x\in [a,b] $$
+    $$ F(x)=G(x)+C \quad \forall x\in [a,b].$$
 
     Ahora hacemos:
 
     $$\int_{a}^{b} \! {f(t)} \, \mathrm{dt}=\int_{a}^{b} \! {f(t)} \, \mathrm{dt}-0=\int_{a}^{b} \! {f(t)} \, \mathrm{dt}- \int_{a}^{a} \! {f(t)} \, \mathrm{dt}$$
-    $$=G(b)-G(a)=G(b)+c-(G(a)+c)=F(b)-F(a)$$
+    $$=G(b)-G(a)=G(b)+c-(G(a)+c)=F(b)-F(a).$$
 
     Por lo tanto, 
 
-    $$ \int_{a}^{b} \! {f(t)} \, \mathrm{dt}=F(b)-F(a) $$
+    $$.\int_{a}^{b} \! {f(t)} \, \mathrm{dt}=F(b)-F(a).$$
 \end{proof}
 
 \textbf{Convención:} si $b\leq a$, entonces $\int_{a}^{b} \! {f(t)} \, \mathrm{dt}=-\int_{b}^{a} \! {f(t)} \, \mathrm{dt}$.
@@ -312,6 +335,15 @@ $$\int_{a}^{b} \! {|t|} \, \mathrm{dt}=\int_{a}^{b} \! {t} \, \mathrm{dt}=\frac{
     \label{fig:fig5}
 \end{figure}
 
+Los tres casos anteriores surge de interpretar correctamente la definicion de valor absoluto:
+
+$$|x|=\left\{
+    \begin{array}{ll}
+        x  & \mbox{si } x\geq 0\\
+        -x & \mbox{si } x<0.
+    \end{array}
+\right.$$
+
 \newpage
 
 \section{\col{El logaritmo natural}}
@@ -326,7 +358,13 @@ $$ L'(x)=x^{-1}=\frac{1}{x} \quad \forall x\neq 0 $$
     El logaritmo natural es una función $ln:\mathbb{R^+}\longrightarrow\mathbb{R}$ definida como sigue:
     $$ \ln(x)=\xinteg{1}{x}{\frac{1}{t}}{dt}=\xinteg{1}{x}{t^{-1}}{dt}.$$
     El logaritmo natural es el área debajo de la gráfica de la función $f(x)=\frac{1}{x}$ en el intervalo $[1,a]$:
-    $$ incluirgrafico $$
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.4]{images/fig6.png}
+        \caption{$ln(x)$ = Área debajo de la gráfica de $\frac{1}{t}$ desde 1 hasta $x$.}
+        \label{fig:fig5}
+    \end{figure}
 \end{definition}
 
 \textbf{Observacion:} Por el TFC \#1, $\derivate{x}{\ln(x)}=   \derivate{x}{\xinteg{1}{x}{\frac{1}{t}}{dt}}=\frac{1}{x}$.
@@ -388,9 +426,20 @@ Los siguientes teoremas serán de gran utilidad para conocer el comportamiento d
 \end{theorem}
 
 \begin{proof}
-    Se prueba por inducción que $\sum_{i=1}^{2^n}\frac{1}{i}\geq 1+\frac{n}{2}$. Además, $\lim_{n\to \infty}\left(a+\frac{n}{2}\right)=\infty$, entonces $\lim_{n\to \infty}\sum_{i=1}^{2^n}\frac{1}{i}=\sum_{i=1}^{2^\infty}\frac{1}{i}=\sum_{i=1}^{\infty}\frac{1}{i}=\infty$. Luego, se observa que, $\forall n>1$, $(1)\frac{1}{2}+(1)\frac{1}{3}+\cdots+(1)\frac{1}{n}<\ln(n)$, tal y como se muestra en la siguiente gráfica:
-    $$ incluirgrafico $$  
-    Entonces $\forall n>1$, $(1)\frac{1}{2}+(1)\frac{1}{3}+\cdots+(1)\frac{1}{n}<\ln(n)$, así pues $\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}<\ln(n)$, luego $\left(1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}\right)-1<\ln(n)$, por tanto $\lim_{n\to \infty}\left(1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}\right)-1 <\lim_{n\to\infty}\ln(n)$, se sigue que $\lim_{n\to \infty}\left(\sum_{i=1}^{2^n}\frac{1}{i}-1\right)<\lim_{n\to\infty}\ln(n)$, entonces $\infty=\lim_{n\to \infty}\left(\sum_{i=1}^{2^n}\frac{1}{i}-1\right)<\lim_{n\to\infty}\ln(n)$, por lo tanto $\lim_{x\to\infty}\ln(x)=\infty$.
+    Se prueba por inducción que $\sum_{i=1}^{2^n}\frac{1}{i}\geq 1+\frac{n}{2}$. Además, $\lim_{n\to \infty}\left(a+\frac{n}{2}\right)=\infty$, entonces
+    $$\lim_{n\to \infty}\sum_{i=1}^{2^n}\frac{1}{i}=\infty.$$
+    Luego, se observa que, $\forall n>1$, $(1)\frac{1}{2}+(1)\frac{1}{3}+\cdots+(1)\frac{1}{n}<\ln(n)$, tal y como se muestra en la siguiente gráfica:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.4]{images/fig7.png}
+        \caption{Claramente el área sombreada es mayor al área rayada.}
+        \label{fig:fig5}
+    \end{figure}
+    Entonces $\forall n>1$, $(1)\frac{1}{2}+(1)\frac{1}{3}+\cdots+(1)\frac{1}{n}<\ln(n)$, así pues 
+    $$\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}<\ln(n)$$
+    $$\Leftrightarrow \quad \left(1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}\right)-1<\ln(n)$$
+    $$\Leftrightarrow \quad \lim_{n\to \infty}\left(1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}\right)-1 <\lim_{n\to\infty}\ln(n).$$
+    Se sigue que $\lim_{n\to \infty}\left(\sum_{i=1}^{2^n}\frac{1}{i}-1\right)<\lim_{n\to\infty}\ln(n)$, entonces $\infty=\lim_{n\to \infty}\left(\sum_{i=1}^{2^n}\frac{1}{i}-1\right)<\lim_{n\to\infty}\ln(n)$, por lo tanto $\lim_{x\to\infty}\ln(x)=\infty$.
 \end{proof}
 
 \begin{theorem}
@@ -408,7 +457,12 @@ Los siguientes teoremas serán de gran utilidad para conocer el comportamiento d
 
 \begin{proof}
     Si $1\leq t$, entonces $t\leq t^2$, entonces $\sqrt{t}\leq \sqrt{t^2}$, entonces $\sqrt{t}\leq t$, entonces $\frac{1}{\sqrt{t}}\geq\frac{1}{t}$, tal y como se muestra en la siguiente gráfica:
-    $$ incluirgrafico$$
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.4]{images/fig8.png}
+        \caption{Claramente el área sombreada es mayor al área rayada.}
+        \label{fig:fig5}
+    \end{figure}    
     Por lo tanto, si $x\geq 1$, entonces $ln(x)=\xinteg{1}{x}{\frac{1}{t}}{dt}\leq\xinteg{1}{x}{\frac{1}{\sqrt{t}}}{dt}=2\sqrt{x}-2<2\sqrt{x}$, entonces $\ln(x)<2\sqrt{x}$. Por lo tanto, $0<\ln(x)<2\sqrt{x} \quad \forall x\geq 1$, entonces $0<\frac{\ln(x)}{x}<\frac{2\sqrt{x}}{x}$, entonces $\lim_{x\to\infty}0<\lim_{x\to\infty}\frac{\ln(x)}{x}<\lim_{x\to\infty}\frac{2\sqrt{x}}{x}$, entonces $0<\lim_{x\to\infty}\frac{\ln(x)}{x}<0$, entonces $\lim_{x\to\infty}\frac{\ln(x)}{x}=0.$
 \end{proof}
 
