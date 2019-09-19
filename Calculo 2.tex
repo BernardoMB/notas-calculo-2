@@ -3,7 +3,7 @@
 % Revisar TODOs.
 
 \usepackage[utf8]{inputenc}
-\usepackage[amsmath]{}
+\usepackage{amsmath}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \usepackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
 \usepackage[rightcaption]{sidecap}
@@ -27,6 +27,8 @@
 \usepackage{tabu}
 % Place figures exacly where you want them
 \usepackage{float}
+% Evaluating derivatives
+\usepackage{stackengine}
 
 % Paragraph identation
 \setlength{\parindent}{0cm}
@@ -35,7 +37,7 @@
 
 \numberwithin{equation}{section}
 
-\title{Cálculo diferencial e interal II}
+\title{Cálculo Diferencial e Interal II}
 \author{Bernardo Mondragón Brozon}
 \date{Enero de 2015}
 
@@ -72,6 +74,11 @@
 
 % Derivada sin parentesis
 \newcommand{\der}[1]{\frac{\mathrm{d}}{\mathrm{d}#1}}
+
+% Evaluating derivatives
+\newcommand\eval[1]{\begin{array}[t]{@{}c@{\,}|@{\,}}% 
+\raisebox{0pt}[0.85\height][1.33\depth]{$ \displaystyle#1 $}\end{array}}
+
 
 % Enesima derivada 
 \newcommand{\derivada}[2]{\frac{\mathrm{d}^{#1}}{\mathrm{d}#2}}
@@ -497,7 +504,12 @@ A continuación se trazará con todo detalle la gráfica de la función logaritm
 
 Dado lo anterior, la gráfica de la función logaritmo natural tiene el siguiente aspecto:
 
-$$ incluirgrafico $$
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/fig9.png}
+    \caption{Gráfica de la función logaritmo natural.}
+    \label{fig:fig9}
+\end{figure}    
 
 \subsection{\col{Algunos límites importantes}}
 
@@ -539,16 +551,21 @@ Recordar que $\xinteg{}{}{\frac{u'}{u}}{du}=\ln|u|+C$.
 Las primitivas de las principales funciones trigonométricas son las siguientes:
 
 \begin{enumerate}
-    \item $\xinteg{}{}{\sin(t)}{dt}=-\cos(t)+C$
-    \item $\xinteg{}{}{\cos(t)}{dt}=\sin(t)+C$
-    \item $\xinteg{}{}{\tan(t)}{dt}=\xinteg{}{}{\frac{\sin(t)}{\cos(t)}}{dt}=-\xinteg{}{}{\frac{-\sin(t)}{\cos(t)}}{dt}=-\xinteg{}{}{\frac{\cos'(t)}{\cos(t)}}{dt}=-\ln|\cos(t)|+C$
-    \item $\xinteg{}{}{\cot(t)}{dt}=\xinteg{}{}{\frac{\cos(t)}{\sin(t)}}{dt}=\xinteg{}{}{\frac{\sin'(t)}{\cos(t)}}{dt}=\ln|\sin(t)|+C$
-    \item $\xinteg{}{}{\sec(t)}{dt}=\xinteg{}{}{\sec(t)\\frac{\sec(t)+\tan(t)}{\sec(t)+\tan(t)}}{dt}=\xinteg{}{}{\frac{\sec^2(t)+\sec(t)\tan(t)}{\sec(t)+\tan(t)}}{dt}$
-    
-    $=\xinteg{}{}{\frac{(\sec(t)+\tan(t))'}{\sec(t)+\tan(t)}}{dt}=\ln|\sec(t)+\tan(t)|+C$
-    \item $\xinteg{}{}{\csc(t)}{dt}=\xinteg{}{}{\csc(t)\frac{\cot(t)-\csc(t)}{\cot(t)-\csc(t)}}{dt}=\xinteg{}{}{\frac{\csc(t)\cot(t)-\csc^2(t)}{\cot(t)-\csc(t)}}{dt}$
-    
-    $=\xinteg{}{}{\frac{(\cot(t)-\csc(t))'}{\cot(t)-\csc(t)}}{dt}=\ln|\cot(t)-\csc(t)|+C$
+    \item $$\xinteg{}{}{\sin(t)}{dt}=-\cos(t)+C$$
+    \item $$\xinteg{}{}{\cos(t)}{dt}=\sin(t)+C$$
+    \item $$\xinteg{}{}{\tan(t)}{dt}=\xinteg{}{}{\frac{\sin(t)}{\cos(t)}}{dt}=-\xinteg{}{}{\frac{-\sin(t)}{\cos(t)}}{dt}=-\xinteg{}{}{\frac{\cos'(t)}{\cos(t)}}{dt}=-\ln|\cos(t)|+C$$
+    \item $$\xinteg{}{}{\cot(t)}{dt}=\xinteg{}{}{\frac{\cos(t)}{\sin(t)}}{dt}=\xinteg{}{}{\frac{\sin'(t)}{\cos(t)}}{dt}=\ln|\sin(t)|+C$$
+    \item 
+    $$\begin{aligned}
+        \xinteg{}{}{\sec(t)}{dt} & = \xinteg{}{}{\sec(t)\frac{\sec(t)+\tan(t)}{\sec(t)+\tan(t)}}{dt}=\xinteg{}{}{\frac{\sec^2(t)+\sec(t)\tan(t)}{\sec(t)+\tan(t)}}{dt}  \\
+        & = \xinteg{}{}{\frac{(\sec(t)+\tan(t))'}{\sec(t)+\tan(t)}}{dt}=\ln|\sec(t)+\tan(t)|+C \\
+    \end{aligned}$$
+
+    \item 
+    $$\begin{aligned}
+        \xinteg{}{}{\csc(t)}{dt} & = \xinteg{}{}{\csc(t)\frac{\cot(t)-\csc(t)}{\cot(t)-\csc(t)}}{dt}=\xinteg{}{}{\frac{\csc(t)\cot(t)-\csc^2(t)}{\cot(t)-\csc(t)}}{dt} \\
+        & = \xinteg{}{}{\frac{(\cot(t)-\csc(t))'}{\cot(t)-\csc(t)}}{dt}=\ln|\cot(t)-\csc(t)|+C \\
+    \end{aligned}$$
 \end{enumerate}
 
 \vspace{0.5cm}
@@ -565,8 +582,68 @@ Cuando se tiene una función muy ``exótica", en algunas ocaciones, es más conv
     Si $y=f(x)$, entonces $\ln(y)=\ln(f(x))$, de manera que $\frac{d}{dx}\ln(y)=\frac{d}{dx}\ln(f(x))$, así pues, $\frac{y'}{y}=(\ln(f(x)))'$, por lo tanto $y'=y(\ln(f(x)))'$.
 \end{proof}
 
-% TODO: Incluir ejercicios de diferenciacion logaritmica
-[Incluir ejercicios de diferenciacion logaritmica]
+\subsection{\col{Ejercicios}}
+
+\begin{enumerate}
+    \item Demuestre que $5\leq \integrate{-3}{2}{\sqrt{t^2+1}}{t}\leq 5\sqrt{10}$.
+    \item Sea $f:[-2,13]\to\mathbb{R}$ continue y suponga que $30 \leq \integrate{-2}{13}{f(t)}{t}$. Demuestre que existe una $c\in[-2,13]$ tal que $f(c)\geq 2$.
+    \item Sea $T(x)=\integrate{0}{x}{f(t)}{t}$, $f(t)=\frac{1}{1+t^2}$. Demuestre que
+        \begin{enumerate}
+            \item $T'(x)\geq 0$ y $T$ es concava hacia abajo en $(-\infty,0]$.
+            \item $T$ es concava hacia arriba en $[0,\infty]$.
+            \item $T$ tiene un punto de inflexión en $x=0$.
+        \end{enumerate}
+    \item Encuentre el área sombreada
+        \begin{figure}[H]
+            \centering
+            \includegraphics[scale=0.4]{images/fig10.png}
+            \caption{Hallar el área sombreada.}
+            \label{fig:fig10}
+        \end{figure}  
+    \item Resulva las siguientes integrales:
+        \setlength{\columnsep}{-0.6in}
+        \begin{multicols}{2}
+            \begin{enumerate}
+                \item $\integrate{9}{64}{\frac{1}{\sqrt{t}\sqrt{1+\sqrt{t}}}}{t}$
+                \item $\integrate{-5}{12}{\sqrt{4+|t|}}{t}$
+            \end{enumerate}
+        \end{multicols}
+    \item Obtén $\integrate{a}{b}{|x|}{x}$ si
+        \setlength{\columnsep}{-0.6in}
+        \begin{multicols}{2}
+            \begin{enumerate}
+                \item $b<0$
+                \item $b>0$ y $a<0$
+                \item $a>0$
+            \end{enumerate}
+        \end{multicols}
+    \item Simplifique y resuelva $\ln{\left(\frac{A^{\frac{3}{2}}B^6}{\sqrt{A}B^{\frac{5}{7}}}\right)^{-\frac{1}{3}}}$.
+    \item Calcule $\eval{\frac{d}{dx}\left(\frac{\sqrt{x^2+1}(x^2+4)^{37}}{(4x^2+7)^{\frac{1}{3}}}\right)^{\frac{1}{3}}}_{x=0}$
+    \item Calcule y grafique el área calculada en las siguientes integrales:
+        \begin{multicols}{2}
+            \begin{enumerate}
+                \item $\integrate{-2}{-\frac{3}{2}}{\frac{1}{1+t}}{t}$
+                \item $\integrate{\frac{\pi}{4}}{\frac{\pi}{3}}{\cot(t)}{t}$
+                \item $\integrate{2}{5}{\frac{1}{t\ln (t)}}{t}$
+                \item $\integrate{\pi}{\frac{5\pi}{4}}{\sec (t)}{t}$
+            \end{enumerate}
+        \end{multicols}
+    \item Calcula lo siguiente:
+        \begin{multicols}{2}
+            \begin{enumerate}
+                \item $x\ln(e)$
+                \item $\ln(e^x)$
+            \end{enumerate}
+        \end{multicols}
+    \item Trace con todo detalle la gáfica de las siguientes funciones:
+        \begin{multicols}{2}
+            \begin{enumerate}
+                \item $f(x)=\frac{\ln(x)}{x}$
+                \item $f(x)=x\ln(x)$
+                \item $f(x)=\ln(1+x^2)$
+            \end{enumerate}
+        \end{multicols}
+\end{enumerate}
 
 \newpage
 
