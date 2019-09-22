@@ -64,7 +64,7 @@
 \newcommand{\xinteg}[4]{\int_{#1}^{#2} \! {#3} \, \mathrm{#4}}
 
 % Integral
-\newcommand{\integrate}[4]{\int_{#1}^{#2} \! {#3} \, \mathrm{d} {#4}}
+\newcommand{\integrate}[4]{\int_{#1}^{#2} \! {#3} \, \mathrm{d} {#4} }
 
 % Integral con argumentos opcionales
 \newcommandtwoopt{\integ}[4][][]{\int_{#1}^{#2} \! {#3} \, \mathrm{#4}}
@@ -220,7 +220,7 @@ $$ \mathbb{A}(x)=\int_{a}^{x} \! {f(t)} \, \mathrm{dt} =
         \centering
         \includegraphics[scale=0.4]{images/fig2-1.png}
         \caption{Área debajo de la gráfica de $f$.}
-        \label{fig:fig2}
+        \label{fig:fig2-1}
     \end{figure}
 
     Es claro que el área acumulada es igual $\frac{1}{2}$. Entonces, en efecto, $\exists c \in [0,1]$ tal que
@@ -370,7 +370,7 @@ $$ L'(x)=x^{-1}=\frac{1}{x} \quad \forall x\neq 0 $$
         \centering
         \includegraphics[scale=0.4]{images/fig6.png}
         \caption{$ln(x)$ = Área debajo de la gráfica de $\frac{1}{t}$ desde 1 hasta $x$.}
-        \label{fig:fig5}
+        \label{fig:fig6}
     \end{figure}
 \end{definition}
 
@@ -564,7 +564,7 @@ Las primitivas de las principales funciones trigonométricas son las siguientes:
     \item 
     $$\begin{aligned}
         \xinteg{}{}{\csc(t)}{dt} & = \xinteg{}{}{\csc(t)\frac{\cot(t)-\csc(t)}{\cot(t)-\csc(t)}}{dt}=\xinteg{}{}{\frac{\csc(t)\cot(t)-\csc^2(t)}{\cot(t)-\csc(t)}}{dt} \\
-        & = \xinteg{}{}{\frac{(\cot(t)-\csc(t))'}{\cot(t)-\csc(t)}}{dt}=\ln|\cot(t)-\csc(t)|+C \\
+        & = \xinteg{}{}{\frac{(\cot(t)-\csc(t))'}{\cot(t)-\csc(t)}}{dt}=\ln|\cot(t)-\csc(t)|+C. \\
     \end{aligned}$$
 \end{enumerate}
 
@@ -589,9 +589,9 @@ Cuando se tiene una función muy ``exótica", en algunas ocaciones, es más conv
     \item Sea $f:[-2,13]\to\mathbb{R}$ continue y suponga que $30 \leq \integrate{-2}{13}{f(t)}{t}$. Demuestre que existe una $c\in[-2,13]$ tal que $f(c)\geq 2$.
     \item Sea $T(x)=\integrate{0}{x}{f(t)}{t}$, $f(t)=\frac{1}{1+t^2}$. Demuestre que
         \begin{enumerate}
-            \item $T'(x)\geq 0$ y $T$ es concava hacia abajo en $(-\infty,0]$.
-            \item $T$ es concava hacia arriba en $[0,\infty]$.
-            \item $T$ tiene un punto de inflexión en $x=0$.
+            \item $T'(x)\geq 0$ y $T$ es concava hacia abajo en $(-\infty,0]$
+            \item $T$ es concava hacia arriba en $[0,\infty]$
+            \item $T$ tiene un punto de inflexión en $x=0$
         \end{enumerate}
     \item Encuentre el área sombreada
         \begin{figure}[H]
@@ -601,7 +601,7 @@ Cuando se tiene una función muy ``exótica", en algunas ocaciones, es más conv
             \label{fig:fig10}
         \end{figure}  
     \item Resulva las siguientes integrales:
-        \setlength{\columnsep}{-0.6in}
+        %\setlength{\columnsep}{-0.6in}
         \begin{multicols}{2}
             \begin{enumerate}
                 \item $\integrate{9}{64}{\frac{1}{\sqrt{t}\sqrt{1+\sqrt{t}}}}{t}$
@@ -609,8 +609,8 @@ Cuando se tiene una función muy ``exótica", en algunas ocaciones, es más conv
             \end{enumerate}
         \end{multicols}
     \item Obtén $\integrate{a}{b}{|x|}{x}$ si
-        \setlength{\columnsep}{-0.6in}
-        \begin{multicols}{2}
+        %\setlength{\columnsep}{-0.6in}
+        \begin{multicols}{3}
             \begin{enumerate}
                 \item $b<0$
                 \item $b>0$ y $a<0$
@@ -618,9 +618,9 @@ Cuando se tiene una función muy ``exótica", en algunas ocaciones, es más conv
             \end{enumerate}
         \end{multicols}
     \item Simplifique y resuelva $\ln{\left(\frac{A^{\frac{3}{2}}B^6}{\sqrt{A}B^{\frac{5}{7}}}\right)^{-\frac{1}{3}}}$.
-    \item Calcule $\eval{\frac{d}{dx}\left(\frac{\sqrt{x^2+1}(x^2+4)^{37}}{(4x^2+7)^{\frac{1}{3}}}\right)^{\frac{1}{3}}}_{x=0}$
+    \item Calcule $\eval{\frac{d}{dx}\left(\frac{\sqrt{x^2+1}(x^2+4)^{37}}{(4x^2+7)^{\frac{1}{3}}}\right)^{\frac{1}{3}}}_{x=0}$.
     \item Calcule y grafique el área calculada en las siguientes integrales:
-        \begin{multicols}{2}
+        \begin{multicols}{4}
             \begin{enumerate}
                 \item $\integrate{-2}{-\frac{3}{2}}{\frac{1}{1+t}}{t}$
                 \item $\integrate{\frac{\pi}{4}}{\frac{\pi}{3}}{\cot(t)}{t}$
@@ -636,7 +636,7 @@ Cuando se tiene una función muy ``exótica", en algunas ocaciones, es más conv
             \end{enumerate}
         \end{multicols}
     \item Trace con todo detalle la gáfica de las siguientes funciones:
-        \begin{multicols}{2}
+        \begin{multicols}{3}
             \begin{enumerate}
                 \item $f(x)=\frac{\ln(x)}{x}$
                 \item $f(x)=x\ln(x)$
@@ -653,17 +653,22 @@ Cuando se tiene una función muy ``exótica", en algunas ocaciones, es más conv
 
 Trazando la gráfica de la función del logaritmo natural, se probó que $\ln:(0,\infty)\longrightarrow\mathbb{R}$ es una función inyectiva y suprayectiva, y por lo tanto, $\ln(x)$ es una función biyectiva. Se puede concluir entonces que $\ln(x)$ tiene función inversa, es decir, $\ln(x)$ es invertible.
 
-\begin{definition}[La función exponencial]
+\begin{definition}[(La función exponencial)]
     La exponencial es una función $\exp:\mathbb{R}\longrightarrow (0,\infty)$ y se define como la inversa bajo composición de la función del logaritmo natural. De manera que 
     $$ y=\ln(x), \quad \mbox{si y sólo si} \quad x=\exp(y).$$
 \end{definition}
 
 Se puede obtener la función exponencial a partir de la inversa de la función $\ln(x)$. Para esto, se tiene que hacer una reflexión de $\ln(x)$ con respecto al origen tal y como se muestra en la siguiente figura:
 
-$$ incluirgrafico $$ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/fig11.png}
+    \caption{Reflexión con respecto a la identidad de la función $\ln(x)$.}
+    \label{fig:fig11}
+\end{figure}
 
 \begin{theorem}
-    Si $f(x)$ es una función estrictamente creciente tal que existe su inversa, entonces $f^{-1}(x)$ es una función estrictamente creciente, es decir, la inversa de una función creciente es una funcion creciente.
+    Si $f(x)$ es una función estrictamente creciente tal que existe su inversa, entonces $f^{-1}(x)$ es una función estrictamente creciente, es decir, la inversa de una función creciente es una función creciente.
 \end{theorem}
 
 \begin{proof}
@@ -672,12 +677,14 @@ $$ incluirgrafico $$
 
 \begin{theorem}[(Propiedades de la exponencial)]
     $\forall a,b\in\mathbb{R}$ y $\forall r\in\mathbb{Q}$ ocurre que:
-    \begin{enumerate}
-        \item[a)] $\exp(a+b)=\exp(a)\exp(b)$
-        \item[b)] $\exp(a-b)=\frac{\exp(a)}{\exp(b)}$
-        \item[c)] $\exp(-b)=\frac{1}{\exp(b)}=(\exp(b))^{-1}$
-        \item[d)] $\exp(ra)=(\exp(a))^r$
-    \end{enumerate}
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item[a)] $\exp(a+b)=\exp(a)\exp(b)$
+            \item[b)] $\exp(a-b)=\frac{\exp(a)}{\exp(b)}$
+            \item[c)] $\exp(-b)=\frac{1}{\exp(b)}=(\exp(b))^{-1}$
+            \item[d)] $\exp(ra)=(\exp(a))^r$
+        \end{enumerate}
+    \end{multicols}
 \end{theorem}
 
 \begin{proof}
@@ -702,25 +709,26 @@ $$ incluirgrafico $$
     \end{enumerate}
 \end{proof}
 
-\section{\col{Límites relevantes de la exponencial}}
+\subsection{\col{Límites relevantes de la exponencial}}
 
 \begin{theorem}
-    $\ln(x)\leq x-1 \quad \forall x\geq 1$. \textbf{(No está tan clara la demostración de este teorema)}
+    $\ln(x)\leq x-1 \quad \forall x\geq 1$.
 \end{theorem}
 
 \begin{proof}
+    Gráficamente, se puede observar que el área del rectángulo dada por $x-1$ es mayor al área sombreada dada por $\ln(x)=\integrate{1}{x}{\frac{1}{t}}{t}$:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.4]{images/fig12.png}
+        \caption{Note que el área sombreada es mayor al área rayada.}
+        \label{fig:fig12}
+    \end{figure}
     Por el teorema del valor medio para integrales, se tiene que existe algúna $c\in [1,x]$ tal que
-
     $$\ln(x)=\xinteg{1}{x}{\frac{1}{t}}{dt}=f(c)(x-1)=\frac{1}{c}(x-1).$$
-
-    $$incluir grafico$$
-
-    Por lo tanto, si $c=1$, entonces $\ln(x)=x-1$, pero si $c=x$, entonces $\ln(x)=\frac{x-1}{x}$. Además, si $x\geq 1$ se tiene que 
-
-    $$ (x-1)^2=x^2-2x-1\geq 0 \Rightarrow x^2-2x\geq 1 \Rightarrow x^2-x\geq 1+x $$
-    $$ \Rightarrow x(x-1)\geq 1+x \Rightarrow x-1\geq \frac{1+x}{x} \geq \frac{x-1}{x} $$
-
-    Se sigue que $\frac{x-1}{x}\leq\ln(x)\leq x-1$, en particular $\ln(x)\leq x-1$.
+    Si $c=1$, entonces $\ln(x)=x-1$, pero si $c=x$, entonces $\ln(x)=\frac{x-1}{x}$. Además, si $x\geq 1$ se tiene que 
+    $$ (x-1)^2=x^2-2x-1\geq 0 \quad \Rightarrow \quad x^2-2x\geq 1 \quad \Rightarrow \quad x^2-x\geq 1+x $$
+    $$ \Rightarrow\quad x(x-1)\geq 1+x \quad\Rightarrow \quad x-1\geq \frac{1+x}{x} \geq \frac{x-1}{x} $$
+    Se sigue del teorema del valor medio para integrales que $\frac{x-1}{x}\leq\ln(x)\leq x-1$. En particular se tiene que $\ln(x)\leq x-1$.
 \end{proof}
 
 \begin{theorem}
@@ -729,8 +737,8 @@ $$ incluirgrafico $$
 
 \begin{proof}
     Si $x\geq 1$, entonces $\ln(x)\leq x-1\leq x$, como la función esponencial es una función creciente, se tiene que $\exp(\ln(x))\leq\exp(x)$, se sigue que $x\leq\exp(x)$, de manera que
-    $$ \lim_{x\to\infty}x\leq\lim_{x\to\infty}\exp(x)\Rightarrow \infty\leq\lim_{x\to\infty}\exp(x) $$
-    $$ \therefore \lim_{x\to\infty}\exp(x)=\infty.$$
+    $$ \lim_{x\to\infty}x\leq\lim_{x\to\infty}\exp(x)\quad\Rightarrow\quad \infty\leq\lim_{x\to\infty}\exp(x) $$
+    $$ \therefore \quad\lim_{x\to\infty}\exp(x)=\infty.$$
 \end{proof}
 
 \begin{theorem}
@@ -739,7 +747,7 @@ $$ incluirgrafico $$
 
 \begin{proof}
     Sea $t=-x$. Si $x\to -\infty$, entonces $t\to\infty$, además, si $t\to\infty$, entonces $x\to-\infty$, por lo tanto, $x\to -\infty$, si y sólo si $t\to\infty$. De manera que
-    $$\lim_{x\to -\infty}\exp(x)=\lim_{t\to\infty}\exp(-t)=\lim_{t\to\infty}\frac{1}{\exp(t)}="0^+"=0.$$
+    $$\lim_{x\to -\infty}\exp(x)=\lim_{t\to\infty}\exp(-t)=\lim_{t\to\infty}\frac{1}{\exp(t)}=``0^+"=0.$$
 \end{proof}
 
 \begin{theorem}
@@ -756,9 +764,13 @@ $$ incluirgrafico $$
 \end{theorem}
 
 \begin{proof}
-    $$ \lim_{x\to\infty}\frac{ax+b}{\exp(x)}=\lim_{x\to\infty}\left( \frac{ax}{\exp(x)}+\frac{b}{\exp(x)} \right)=\lim_{x\to\infty}\frac{ax}{\exp(x)}+\lim_{x\to\infty}\frac{b}{\exp(x)} $$
-    $$ =a\lim_{x\to\infty}\frac{x}{\exp(x)}+b\lim_{x\to\infty}\frac{1}{\exp(x)}=a(0)+b(0)=0.$$
-\end{proof}
+    $$\begin{aligned}
+        \lim_{x\to\infty}\frac{ax+b}{\exp(x)} & = \lim_{x\to\infty}\left( \frac{ax}{\exp(x)}+\frac{b}{\exp(x)} \right)=\lim_{x\to\infty}\frac{ax}{\exp(x)}+\lim_{x\to\infty}\frac{b}{\exp(x)} \\
+        & = a\lim_{x\to\infty}\frac{x}{\exp(x)}+b\lim_{x\to\infty}\frac{1}{\exp(x)}=a(0)+b(0)=0. \\
+    \end{aligned}$$
+\end{proof} 
+
+Por el teorema anterior, se puede conlcuir que la función exponencial no tiene asíntotas oblícuas.
 
 \subsection{\col{La gráfica de la función exponencial}}
 
@@ -823,7 +835,12 @@ A continuación se trazará con todo detalle la gráfica de la función exponenc
 
 Dado lo anterior, la gráfica de la función exponencial tiene el siguiente aspecto:
 
-$$ incluir grafico $$
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/fig13.png}
+    \caption{La gráfica de la función exponencial.}
+    \label{fig:fig13}
+\end{figure}
 
 
 \subsection{\col{Más acerca de la exponencial}}
@@ -841,7 +858,7 @@ Lo cual da lugar al siguinete teorema.
 
 \begin{proof}
     $$ {(\exp(f(x))+C)'}={(\exp(f(x)))'}=\exp(f(x))f'(x)$$
-    $$\Rightarrow \integ[][]{\exp(f(x))f'(x)}{dx}=\exp(f(x))+C. \quad $$
+    $$\Rightarrow \quad \integ[][]{\exp(f(x))f'(x)}{dx}=\exp(f(x))+C. \quad $$
 \end{proof}
 
 Se demostrará que si $P(x)$ es cualquier polinomio en $x$, entonces $\lim_{x\to\infty}\frac{P(x)}{\exp(x)}=0$. Enseguida se mostrarán las ideas que ayudarán a llegar a esta conclusión.
@@ -890,11 +907,11 @@ Se probará que $\exp(x)=e^x$. Esto se cumple en todos los casos, por ejemplo:
     \item[a)] $\exp(1)=e$.
     \item[b)] $\exp(2)=\exp(1+1)=\exp(1)\exp(1)=e\cdot e=e^2$.
     \item[c)] $\exp(n)=\exp(\underbrace{1+1+\cdots+1}_{\mbox{n veces}})=\underbrace{\exp(1)\exp(1)\cdots\exp(1)}_{\mbox{n veces}}=\exp(1)^n=e^n$.
-    \item[d] $\exp(-1)=\frac{1}{\exp(1)}=\exp(1)^{-1}=e^{-1}$.
+    \item[d)] $\exp(-1)=\frac{1}{\exp(1)}=\exp(1)^{-1}=e^{-1}$.
     \item[e)] $\exp(-n)=\frac{1}{\exp(n)}=\frac{1}{e^n}=e^{-n}$.
 \end{enumerate}
 
-\begin{theorem}[La constante de Euler]
+\begin{theorem}[(La constante de Euler)]
     $\exp(x)=e^{x}\quad\paratodoxen{x}{\mathbb{R}}$.
 \end{theorem}
 
@@ -925,11 +942,13 @@ En conclusión, $\exp(x)=e^x \paratodoxen{x}{R}$.
 
 \begin{theorem}[Leyes de los exponentes]
     $\forall a,b\in\mathbb{R}$ y $\forall r\in\mathbb{Q}$ ocurre que:
-    \begin{enumerate}
-        \item[a)] $e^a\cdot e^b=e^{a+b}$.
-        \item[b)] $\frac{e^a}{e^b}=e^{a-b}$.
-        \item[c)] $({e^a})^{r}=e^{ar}$.
-    \end{enumerate}
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item[a)] $e^a\cdot e^b=e^{a+b}$.
+            \item[b)] $\frac{e^a}{e^b}=e^{a-b}$.
+            \item[c)] $({e^a})^{r}=e^{ar}$.
+        \end{enumerate}
+    \end{multicols}
 \end{theorem}
 
 \begin{proof}
@@ -1075,7 +1094,12 @@ A continuación se trazará con todo detalle la gráfica de la función $f(x)=a^
 
 Dado lo anterior, la gráfica de la función $f(x)=a^x$ tiene el siguiente aspecto:
 
-$$ incluir grafico $$
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/fig14.png}
+    \caption{La gráfica de la función $a^x$.}
+    \label{fig:fig14                                                    }
+\end{figure}
 
 \begin{theorem}
     Si $1<a<b$, entonces 
@@ -1124,7 +1148,12 @@ $$ \frac{a^x}{b^x}=\exp(r\cdot x)\left\{
 
 En resumen, se definió la función $f(x)=a^x=\exp(x\ln(a))$ con $a>0$ constante, se estudio el caso especial $a=1$ y se demostró el aspecto del siguiente gráfico:
 
-$$ incluir grafico $$
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/fig15.png}
+    \caption{\textbf{Nota:} $a_0$, $b_0$, $a_1$ y $b_1$ constantes.}
+    \label{fig:fig14                                                    }
+\end{figure}
 
 \subsection{\col{Algunas propiedades algebraicas}}
 
@@ -1144,8 +1173,8 @@ $$ incluir grafico $$
         
         \begin{equation*}
         \begin{split}
-            a^xa^y & =\exp(x\ln(a))\cdot\exp(y\ln(a))=\exp(x\ln(a)+y\ln(a))=\exp(\ln(a)(x+y)) =\exp(\ln(a^{x+y}))\\
-            & =a^{x+y}.
+            a^xa^y & =\exp(x\ln(a))\cdot\exp(y\ln(a))=\exp(x\ln(a)+y\ln(a))=\exp(\ln(a)(x+y))\\
+            & =\exp(\ln(a^{x+y}))=a^{x+y}.
         \end{split}
         \end{equation*}
         
@@ -1183,21 +1212,97 @@ $$ incluir grafico $$
 \end{theorem}
 
 \begin{proof}
-    $$\limit{n}{\infty} n\left( \sqrt[n]{x}-1  \right) =\limit{n}{\infty} \frac{x^{\frac{1}{n}}-1}{\frac{1}{n}}. $$
-    Sea $b=\frac{1}{n}$, entonces $\limit{b}{0}\frac{x^b-1}{b}=\limit{b}{0}\frac{x^b-x^0}{b}=\limit{b}{0}\frac{\exp(b\ln(x)) -\exp(0\ln(x))}{b}$. Además, $\limit{b}{0}\frac{\exp(b\ln(x)) -\exp(0\ln(x))}{b}=\limit{b}{0}\frac{f(b)-f(0)}{b}=f'(0)$ donde $f(b)=\exp(b\ln(x))$. Entonces $\limit{n}{\infty} n\left( \sqrt[n]{x}-1  \right)=f'(0)=\ln(x)$.
+    $$\limit{n}{\infty} n\left(\sqrt[n]{x}-1\right)=\limit{n}{\infty}\frac{x^{\frac{1}{n}}-1}{\frac{1}{n}}.$$
+    Sea $b=\frac{1}{n}$, entonces 
+    $$\limit{b}{0}\frac{x^b-1}{b}=\limit{b}{0}\frac{x^b-x^0}{b}=\limit{b}{0}\frac{\exp(b\ln(x))-\exp(0\ln(x))}{b}.$$
+    Además, $\limit{b}{0}\frac{\exp(b\ln(x)) -\exp(0\ln(x))}{b}=\limit{b}{0}\frac{f(b)-f(0)}{b}=f'(0)$ donde $f(b)=\exp(b\ln(x))$. Entonces 
+    $$\limit{n}{\infty} n\left( \sqrt[n]{x}-1  \right)=f'(0)=\ln(x)$$.
 \end{proof}
 
-% Incluir ejercicios aqui
-[Ejercicios]
+\subsection{\col{Arsenal de límites hasta este punto}}
 
-% Incluir arsenal de limites hasta el momento 
-[Arsenal de limites]
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $\limf{x}\ln(x)=\infty$
+        \item $\limit{x}{0^+}\ln(x)=-\infty$
+        \item $\limit{x}{\infty}\frac{\ln(x)}{x}=0$
+        \item $\limit{x}{\infty}\frac{\ln(x)}{ax+b}=0$
+        \item $\limit{x}{0^+}\frac{\ln(x)}{x}=-\infty$
+        \item $\limit{x}{0^+}x\ln(x)=0$
+        \item $\limit{x}{\infty}\frac{1+x^2}{x}=0$
+        \item $\limit{x}{\infty}\exp(x)=\infty$
+        \item $\limit{x}{-\infty}\exp(x)=0$
+        \item $\limit{x}{\infty}\frac{x}{\exp(x)}=0$
+        \item $\limit{x}{\infty}\frac{ax+b}{\exp(x)}=0$
+        \item $\limit{x}{1}\frac{\ln(t)}{t-1}=1$
+        \item $\limit{x}{0}\frac{\exp(x)-1}{x}=1$
+        \item $\limit{x}{\infty}\frac{p(x)}{\exp(x)}=0$
+        \item $\limit{x}{\infty}\frac{x^k}{\exp(x)}=0$
+        \item $\limit{x}{0^+}x^x=1$
+        \item $\limit{x}{\infty}x^{\frac{1}{x}}=1$
+        \item $\limit{n}{\infty}n(x^{\frac{1}{n}}-1)=\ln(x)$
+    \end{enumerate}
+\end{multicols}
 
-\subsection{\col{Logaritmo base $a$ de $x$}}
+\subsection{\col{Ejercicios}}
 
-Se vio que $e^x=\exp(x)$ y que $a^x=\exp(x\ln(a))$, ahora se hablará de $\log_a(x)$. Pues el contenido anterior trató de $\ln(x)=\log_e(x)$. Se sabe que la función $f(x)=a^x$ tiene el siguiente aspecto para diferentes valores de $a$ tal que $a\in(0,1)\cup(1,\infty)$.
+\begin{enumerate}
+    \item Simplifique lo siguiente:
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item[a)] $\ln{(\exp(x-\ln(x)))}$
+            \item[b)] $\exp(-\ln(x))$
+            \item[c)] $\exp(-\ln(\exp(2x^2+1)))$
+        \end{enumerate}
+    \end{multicols}
+    \item Calcule la primera derivada de las siguientes funciones:
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item[a)] $f(x)=\exp(\sen(x))$
+            \item[c)] $h(x)=x\exp(-x^3)$
+            \item[b)] $g(x)=\exp\left(\frac{1}{\ln(x)}\right)$
+            \item[d)] $k(x)=\ln(\exp(x)+\exp(-x))$
+        \end{enumerate}
+    \end{multicols}
+    \item Resuelva los siguiente: 
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item[a)] $\integrate{}{}{\exp(\sen(x))\cos(x)}{x}$
+            \item[c)] $\integrate{}{}{\exp(\exp(x)+x)[\exp(x)+1]}{x}$
+            \item[b)] $\integrate{}{}{\frac{\exp(x^{-1})}{x^2}}{x}$
+        \end{enumerate}
+    \end{multicols}
+    \item Trace la gráfica de $f(x)=exp(-x)$.
+    \item Calcule lo siguiente:
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item[a)] $\der{x}10^x$
+            \item[b)] $\der{x}e^x$
+        \end{enumerate}
+    \end{multicols}
+    \item Trace la gráfica de $f(x)=x^x$.
+    \item Demuestre que si $0<x<1$, entonces $\frac{x-1}{x}\leq\ln(x)\leq x-1$.
+    \item Tace la gráfica de $f(x)=x^{\frac{1}{2}}$.
+    \item Calcule lo siguiente:
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item[a)] $\integrate{0}{1}{2^{-x}}{x}$
+            \item[b)] $\integrate{0}{\pi /2}{7^{\cos(\theta)}3\sen(\theta)}{\theta}$
+            \item[c)] $\integrate{-\ln(3)}{\ln(4)}{x(3^{x^2})}{x}$
+        \end{enumerate}
+    \end{multicols}
+\end{enumerate}
 
-$$ incluir grafico $$
+\subsection{\col{Logaritmo base \ensuremath{a} de \ensuremath{x}}}
+
+Se vio que $e^x=\exp(x)$ y que $a^x=\exp(x\ln(a))$, ahora se hablará de $\log_a(x)$. Pues el contenido anterior trató de $\ln(x)=\log_e(x)$. Se sabe que la función $f(x)=a^x$ tiene el siguiente aspecto para diferentes valores de $a$ tal que $a\in(0,1)\cup(1,\infty)$:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/fig16.png}
+    \caption{\textbf{Nota:} $a$ constante.}
+    \label{fig:fig16}
+\end{figure}
 
 Para encontrar $\log_a(x)$ habrá que invertir $a^x \quad \forall x\in (0,1)\cup (1,\infty)$. Sea $a>0$ ($a\neq 1$). Se probó que $a^x:(-\infty,\infty)\to (0,\infty)$ es una función biyectiva por lo tanto es invertible.
 
@@ -1259,7 +1364,7 @@ $$ \log_e(x)=\frac{1}{\ln(e)}\ln(x)=\ln(x).$$
         \end{enumerate}
 \end{proof}
 
-\subsection{\col{Límites relevantes para \ensuremath{\log_a(x)}}}
+\subsection{\col{Límites relevantes para \ensuremath{\log_a(x)} }}
 
 \begin{theorem}
     Sea $a\in\mathbb{R}$ tal que $a>0$, entonces 
@@ -1359,7 +1464,12 @@ $$
 
 Entonces la función tiene el siguiente aspecto:
 
-$$incuir grafico$$
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/fig17.png}
+    \caption{\textbf{Nota:} $a$ constante.}
+    \label{fig:fig17}
+\end{figure}
 
 Se obervan los siguientes 4 casos:
 \begin{itemize}
@@ -1369,13 +1479,14 @@ Se obervan los siguientes 4 casos:
 \item Si $0<a<b<1$ y $0<x<1$, entonces $$\log_a(x)=\frac{1}{\ln(a)}\ln(x)< \frac{1}{\ln(b)}\ln(x)=log_b(x).$$    
 \end{itemize}
 
-Entonces se puede demostrar el espacto del siguiente gráfico
+Entonces se puede demostrar el aspecto del siguiente gráfico:
 
-$$incluir grafico$$
-
-En resumen se tiene el siguiente grafico:
-
-$$incluir grafico$$
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{images/fig18.png}
+    \caption{\textbf{Nota:} $a$ y $b$ constantes.}
+    \label{fig:fig18}
+\end{figure}
 
 \begin{theorem}
     Para $x>0$ se tiene que
@@ -1409,8 +1520,21 @@ $$\log_a(x)= \frac{\ln(b)}{\ln(a)}\log_b(x).$$
 
 En este caso, el cociente $\frac{\ln(b)}{\ln(a)}$ es el factor de cambio de base.
 
-% TODO: ejercicios
-[Poner ejercicios ]
+\subsection{\col{Ejercicios}}
+\begin{enumerate}
+    \item Calcule lo siguiente:
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item[a)] $\integrate{}{}{\frac{\log_a(x)}{x}}{x}$ 
+            \item[b)] $\integrate{}{}{\frac{1}{x\log_a(x)}}{x}$ 
+            \item[c)] $\integrate{}{}{\log_a(x)}{x}$ 
+        \end{enumerate}
+    \end{multicols}
+    \item Demuestre que $$\integrate{}{}{\ln(x)}{x}=x\ln(x)-x+c$$ con $c$ una constante.
+    \item ¿Cuánto es $\log_2(x)$ si $\log_3(x)=9$?
+\end{enumerate}
+
+\newpage
 
 \section{\col{Funciones hiperbólicas}}
 
@@ -1432,8 +1556,22 @@ $$\begin{array}{lll}
     \csch:\mathbb{R}\rightarrow\mathbb{R}\quad\quad\quad & \csch(x)=\frac{1}{\senh(x)}=\frac{2}{e^x-e^{-x}}\quad\quad\quad & \forall x\in\mathbb{R} \\
 \end{array}$$
 
-% Incluir la motivación de estas funciones
-[Incluir la motivación de estas funciones]
+Su motivacion es simple:
+
+\begin{multicols}{2}
+    Si $C=\{(u,v)\in\mathbb{R}^2 | u^2+v^2=1\}$, entonces $P=(\cos(x), \sen(x))\in C$
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.4]{images/fig19.png}
+        \label{fig:fig19}
+    \end{figure}
+    Si $H=\{(u,v)\in\mathbb{R}^2 | u^2-v^2=1\}$, entonces $P=(\cosh(x), \senh(x))\in H$
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.4]{images/fig20.png}
+        \label{fig:fig20}
+    \end{figure}
+\end{multicols}
 
 Las analogias entre el mundo trigonométrico y el mundo hiperbólico son diversas. A continuación se muestran algunas propiedades.
 
@@ -1462,6 +1600,7 @@ $\senh(x\pm y)=\senh(x)\cosh(y)\pm \senh(y)\cosh(x)$ & $\begin{array}{c}
 \end{tabu}}
 \end{center}
 
+[Aqui me quede]
 % TODO: incluir demostracion%
 
 \hspace{1cm}
