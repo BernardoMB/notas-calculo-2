@@ -1600,8 +1600,44 @@ $\senh(x\pm y)=\senh(x)\cosh(y)\pm \senh(y)\cosh(x)$ & $\begin{array}{c}
 \end{tabu}}
 \end{center}
 
-[Aqui me quede]
-% TODO: incluir demostracion%
+\begin{theorem}
+	$\senh'(x)=cosh(x)$
+\end{theorem}
+
+\begin{proof}
+	$$\senh'(x)=\der x \senh(x)=\der x \frac{e^x-e^{-x}}{2}=\frac{e^x+e^{-x}}{2}=\cosh(x)$$
+\end{proof}
+
+\begin{theorem}
+	$\cosh'(x)=senh(x)$
+\end{theorem}
+
+\begin{proof}
+	$$\cosh'(x)=\der x \cosh(x)=\der x \frac{e^x+e^{-x}}{2}=\frac{e^x-e^{-x}}{2}=\senh(x)$$
+\end{proof}
+
+\begin{theorem}
+	$\cosh(x)^2-\senh(x)^2=1$
+\end{theorem}
+
+\begin{proof}
+	$$\begin{aligned}
+		\cosh(x)^2-\senh(x)^2 & = \left(\frac{e^x+e^{-x}}{2}\right)^2-\left(\frac{e^x-e^{-x}}{2}\right)^2 \\
+		 & = \left(\frac{e^{2x}+2e^xe^{-x}+e^{-2x}}{4}\right)-\left(\frac{e^{2x}-2e^xe^{-x}+e^{-2x}}{4}\right) \\
+		 & = \frac{4}{4}=1. \\
+	\end{aligned}$$
+\end{proof}
+
+\begin{theorem}
+	$\senh(x\pm y)=\senh(x)\cosh(y)\pm \senh(y)\cosh(x)$
+\end{theorem}
+
+\begin{proof}
+	$$\begin{aligned}
+		\senh(x)\cosh(y)\pm \senh(y)\cosh(x)  & = \frac{e^x-e^{-x}}{2}\frac{e^y+e^{-y}}{2} \pm\frac{e^y-e^{-y}}{2}\frac{e^x+e^{-x}}{2} \\
+		& = \\ 
+	\end{aligned}$$
+\end{proof}
 
 \hspace{1cm}
 
