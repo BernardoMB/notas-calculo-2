@@ -9,6 +9,7 @@
 \usepackage[rightcaption]{sidecap}
 \usepackage{wrapfig}
 \usepackage{graphicx}
+% Colors
 \usepackage{color}
 \usepackage{mathtools}
 \usepackage{amssymb}
@@ -1573,7 +1574,7 @@ Su motivacion es simple:
     \end{figure}
 \end{multicols}
 
-Las analogias entre el mundo trigonométrico y el mundo hiperbólico son diversas. A continuación se muestran algunas propiedades.
+Las analogías entre el mundo trigonométrico y el mundo hiperbólico son diversas. A continuación se muestran algunas propiedades.
 
 \hspace{1cm}
 
@@ -1595,7 +1596,7 @@ $\senh(x\pm y)=\senh(x)\cosh(y)\pm \senh(y)\cosh(x)$ & $\begin{array}{c}
 \end{array}$ \\
     \hline
     Ley de De Moivre & \\
-    $\left(\cosh(x)+\senh(x)\right)^2=\cosh(nx)+\senh(nx)$ & $\left(\cos(x)+i\sen(x)\right)^2=\cos(nx)+i\sen(nx)$ \\
+    $\left(\cosh(x)+\senh(x)\right)^n=\cosh(nx)+\senh(nx)$ & $\left(\cos(x)+i\sen(x)\right)^n=\cos(nx)+i\sen(nx)$ \\
     \hline
 \end{tabu}}
 \end{center}
@@ -1635,14 +1636,44 @@ $\senh(x\pm y)=\senh(x)\cosh(y)\pm \senh(y)\cosh(x)$ & $\begin{array}{c}
 \begin{proof}
 	$$\begin{aligned}
 		\senh(x)\cosh(y)\pm \senh(y)\cosh(x)  & = \frac{e^x-e^{-x}}{2}\frac{e^y+e^{-y}}{2} \pm\frac{e^y-e^{-y}}{2}\frac{e^x+e^{-x}}{2} \\
-		& = \\ 
+		& = \frac{e^{x+y}+e^{x-y}-e^{y-x}-e^{-x-y}}{4}\pm\frac{e^{x+y}+e^{y-x}-e^{x-y}-e^{-x-y}}{4} \\ 
 	\end{aligned}$$
+	Tomando el signo positivo se tiene que
+	$$\begin{aligned}
+	\senh(x)\cosh(y)+ \senh(y)\cosh(x)  & = \frac{2e^{x+y}-2e^{-x-y}}{4} = \frac{e^{x+y}-e^{-x-y}}{2} \\
+	& =  \senh(x+y),\\ 
+	\end{aligned}$$
+	y tomando el signo negativo se tiene que 
+		$$\begin{aligned}
+	\senh(x)\cosh(y)- \senh(y)\cosh(x)  & = \frac{2e^{x-y}-2e^{y-x}}{4} = \frac{e^{x-y}-e^{-(x-y)}}{2} \\
+	& =  \senh(x-y).\\ 
+	\end{aligned}$$
+\end{proof}
+
+\begin{theorem}[(Ley de De Moivre)]
+	$\left(\cosh(x)+\senh(x)\right)^n=\cosh(nx)+\senh(nx)$.
+\end{theorem}
+
+\begin{proof}
+	Se procede mediante inducción matemática. Si $n=1$, entonces se tiene que
+	$$ \left(\cosh(x)+\senh(x)\right)^n=\left(\cosh(x)+\senh(x)\right)^0=1=\frac{e^0+e^{-0}}{2}+\frac{e^0-e^{-0}}{2}=\cosh(0)+\senh(0).$$
+	Si $n=1$, entonces se tiene que
+	$$ \left(\cosh(x)+\senh(x)\right)^n=\left(\cosh(x)+\senh(x)\right)^1=\cosh(x)+\senh(x). $$
+	Suponiendo que la proposición es válida para $n-1$ de manera que 
+	$$ \left(\cosh(x)+\senh(x)\right)^{n-1}=\cosh((n-1)x)+\senh((n-1)x),$$
+	entonces se tiene que
+		$$\begin{aligned}
+		\left(\cosh(x)+\senh(x)\right)^n & = \left(\cosh(x)+\senh(x)\right)^{n-1}\left(\cosh(x)+\senh(x)\right) \\	
+		& = \cosh((n-1)x)+\senh((n-1)x)\left(\cosh(x)+\senh(x)\right)
+		& = \cosh(nx)+\senh(nx).
+		\end{aligned}$$
+		Por lo tanto se tiene que
+		$$ 	\left(\cosh(x)+\senh(x)\right)^n=\cosh(nx)+\senh(nx). $$
 \end{proof}
 
 \hspace{1cm}
 
-A continuacón de muestran algunas antderivadas de las funciones del mundo hiperbólico y del mundo trigonométrico:
-
+A continuacón de muestran algunas antderivadas de las funciones del mundo hiperbólico y del mundo trigonométrico
 \hspace{1cm}
 
 % TODO: poner los resultados en stand by.
@@ -1668,7 +1699,7 @@ A continuacón de muestran algunas antderivadas de las funciones del mundo hiper
 
 \begin{theorem}
     Para toda $x\in\mathbb{R}$ se tiene lo siguiente:
-    \setlength{\columnsep}{-0.6in}
+    %\setlength{\columnsep}{-0.6in}
 \begin{multicols}{2}
     \begin{enumerate}
         \item $\der{x}\tanh(x)=\sech(x)^2$
